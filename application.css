@@ -2855,7 +2855,7 @@ g.mapplic-active > * {
 @media(max-width: 375px){
     .social_box {
         padding: 22px 0;
-        height: 169px;
+        height: 173px;
     } 
 }
 @media(max-width: 320px){
@@ -2863,6 +2863,6 @@ g.mapplic-active > * {
         min-width: 290px;
     }
     .social_box {
-        height: 169px;
+        height: 145px;
     } 
 }
