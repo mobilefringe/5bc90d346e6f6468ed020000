@@ -109,7 +109,7 @@
                     <ul class="sub_menu hidden_now">
                         <li><a href="/hours" data-i18n="nav.subnav.hours"></a></li>
                         <li><a href="pages/westbrook-security" data-i18n="nav.subnav.security"></a></li>
-                        <li><a href="/pages/westbrook-accessibility" data-i18n="nav.subnav.accessibility"></a></li>
+                        <li><a href="/pages/westbrook-accessability" data-i18n="nav.subnav.accessibility"></a></li>
                         <li><a href="/pages/westbrook-act-green-initiatives" data-i18n="nav.subnav.act_green"></a></li>
 					</ul>
                 </li>
