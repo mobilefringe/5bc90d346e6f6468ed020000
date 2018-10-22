@@ -126,7 +126,7 @@
                     </a>
                     <ul class="sub_menu hidden_now">
                        
-                        <li><a href="/contact_us" data-i18n="nav.subnav.mall_info"></a></li>
+                        <li><a href="/contact-us" data-i18n="nav.subnav.mall_info"></a></li>
                         <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
                         <li><a href="/jobs" data-i18n="nav.subnav.careers"></a></li>
 					</ul>
