@@ -270,7 +270,7 @@
                         <div class="col-md-6 col-xs-6">
                             <ul>
                                 <li><a href="/hours" data-i18n="nav.subnav.hours"></a></li>
-                                <li><a href="/pages/westbrook-security" data-i18n="nav.subnav.securtiy"></a></li>
+                                <li><a href="/pages/westbrook-security" data-i18n="nav.subnav.security"></a></li>
                                 <li><a href="/pages/westbrook-accessibility" data-i18n="nav.subnav.accessibility"></a></li>
                                 <li><a href="/contact-us" data-i18n="nav.subnav.contact_us"></a></li>
                                 <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
