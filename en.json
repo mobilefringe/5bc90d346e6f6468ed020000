@@ -21,6 +21,7 @@
 		"promos": "Promotions",
 		"events": "Events",
 		"guest_services": "Our Services",
+			"careers": "Careers",
 		"subnav": {
 			"directory": "Directory",
 	        "map": "Shopping Map",
@@ -30,8 +31,7 @@
 			"act_green": "ACT Green Initiatives",
 			"in_community": "In The Community",
 			"mall_info": "Mall Info",
-		    "leasing": "Leasing",
-			"careers": "Careers"
+		    "leasing": "Leasing"
 		}
 	},
 	"home": {
