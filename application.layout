@@ -128,7 +128,6 @@
                        
                         <li><a href="/contact-us" data-i18n="nav.subnav.contact_us"></a></li>
                         <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
-                        <li><a href="/jobs" data-i18n="nav.subnav.careers"></a></li>
 					</ul>
                 </li>
             </ul>
