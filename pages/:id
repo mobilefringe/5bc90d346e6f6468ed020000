@@ -122,7 +122,7 @@
                 $("#act_green").show();
                 
             }
-            else if (slug == 'lambton-in-the-community'){
+            else if (slug == 'westbrook-security'){
                 $("#security").show();
                 
             }
