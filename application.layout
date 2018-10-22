@@ -244,18 +244,6 @@
                                 <span><i class="fa fa-instagram"></i></span>
                                 <p style="display: none;">Instagram</p>
                             </a>
-                            <a href="https://www.pinterest.ca/lambtoncentre/" target="_blank">
-                                <span><i class="fa fa-pinterest"></i></span>
-                                <p style="display: none;">Pinterest</p>
-                            </a>
-                            <a href="https://plus.google.com/+lambtonmall" target="_blank">
-                                <span><i class="fa fa-google-plus"></i></span>
-                                <p style="display: none;">Google Plus</p>
-                            </a>
-                            <a href="https://www.youtube.com/channel/UC_53DAYXttXXmPjfWZqkvRg" target="_blank">
-                                <span><i class="fa fa-youtube"></i></span>
-                                <p style="display: none;">Youtube</p>
-                            </a>
                             <!--<a href="/newsletter">-->
                             <!--    <span id="social_newsletter"></span>-->
                             <!--    <p style="display: none;">Newsletter</p>-->
