@@ -61,12 +61,12 @@
                        
                         <p id="latest_tweet_date" class="latest_post"></p>
                         <p id="twitter_link">
-                            <a  class="social_link_blank" href="https://twitter.com/AberdeenMall" target="_blank">@AberdeenMall</a>
+                            <a  class="social_link_blank" href="https://twitter.com/AberdeenMall" target="_blank">@WestbrookMall</a>
                         </p>
                     </span>
                     <span class="visible-sm-block visible-xs-block">
                         <a href="https://twitter.com/AberdeenMall" target="_blank">
-                            <h5 id="twitter_mobile" class="insta">FOLLOW US @AberdeenMall</h5>
+                            <h5 id="twitter_mobile" class="insta">FOLLOW US @WestbrookMall</h5>
                         </a>        
                     </span>
                 </div>
