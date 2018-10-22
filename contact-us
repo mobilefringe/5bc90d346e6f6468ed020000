@@ -8,7 +8,7 @@
             <h5 class="active_heading" data-i18n="inside_page.contact"></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/leasing" data-i18n="inside_page.hours"></a></h5>
+            <h5><a href="/leasing" data-i18n="inside_page.leasing"></a></h5>
         </div>
         <div class="col-md-3">
             <h5><a href="/about-us" data-i18n="inside_page.about"></a></h5>
