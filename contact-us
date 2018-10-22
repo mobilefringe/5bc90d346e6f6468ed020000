@@ -4,17 +4,11 @@
 </div>
 <div class="store_list_head main_container">
     <div class="row hidden_phone">
-        <div class="col-md-3">
+        <div class="col-md-6">
             <h5 class="active_heading" data-i18n="inside_page.contact"></h5>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <h5><a href="/leasing" data-i18n="inside_page.leasing"></a></h5>
-        </div>
-        <div class="col-md-3">
-            <h5><a href="/about-us" data-i18n="inside_page.about"></a></h5>
-        </div>
-        <div class="col-md-3">
-            <h5><a href="/directions-and-parking" data-i18n="inside_page.directions"></a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
