@@ -1,0 +1,75 @@
+<div class="inside_banner text-center">
+    <h2 data-i18n="newsletter.title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding pages_text">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="mm_page_content" class="margin_20"></div>
+                <div class="newsletter_page">
+                    <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1AE79E510E7BBDA4CCB6FA7B7156A5F11E8B57CFC3C75414D0069ECA45F20A524EA63A60C7497FA20AEC254BC521307B8E">	
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="fieldName" data-i18n="newsletter.name"></label>
+                                <input id="fieldName" name="cm-name" type="text" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="fieldEmail" data-i18n="newsletter.email"></label>
+                                <input id="fieldEmail" name="cm-ykblk-ykblk" type="email" class="js-cm-email-input" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="agree_terms">
+                                    <input id="agree_terms" type="checkbox" required /> 
+                                    <span data-i18n="newsletter.agree"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button class="newsletter_btn animated_btn" type="submit" data-i18n="newsletter.subscribe"></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+<script>
+$(document).ready(function(e){
+    init(e);
+    function renderAll(){
+        var banner_repo = getRepoDetailsByName("Newsletter Banner");
+        if (banner_repo) {
+            var banner_image = banner_repo.images[0].image_url;
+            if (banner_image) {
+                $(".inside_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+            }
+        }
+        
+        var prefix = get_prefix();
+        var pages_json = prefix + "/pages/westbrook-newsletter.json"
+        $.getJSON(pages_json).done(function(data) {
+            if(Cookies.get('current_locale') == "en-CA"){
+                $('#mm_page_content').html(data.body);
+            }
+            if(Cookies.get('current_locale') == "fr-CA"){
+                $('#mm_page_content').html(data.body_2);
+            }
+        }).fail(function(jqXHR) {
+            if (jqXHR.status == 404) {
+                $("#404_msg").fadeIn("fast");
+            }
+        });
+            
+        show_content();
+    }
+    
+    loadMallDataCached(renderAll); 
+});
+</script>
