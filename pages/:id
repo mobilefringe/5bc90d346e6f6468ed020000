@@ -5,7 +5,7 @@
 <div class="store_list_head main_container hidden_now" id="act_green">
     <div class="row hidden_phone">
         <div class="col-md-3">
-            <h5><a href="/services" data-i18n="inside_page.services"></a></h5>
+            <h5><a href="/hours" data-i18n="inside_page.services"></a></h5>
         </div>
         <div class="col-md-3">
             <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
