@@ -118,7 +118,7 @@
             }); 
             
             // check if top header should be shown 
-            if(slug == 'lambton-act-green-initiatives'){
+            if(slug == 'westbrook-act-green-initiatives'){
                 $("#act_green").show();
                 
             }
