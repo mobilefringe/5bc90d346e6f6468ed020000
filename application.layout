@@ -109,7 +109,7 @@
                     <ul class="sub_menu hidden_now">
                         <li><a href="/hours" data-i18n="nav.subnav.hours"></a></li>
                         <li><a href="pages/westbrook-security" data-i18n="nav.subnav.security"></a></li>
-                        <li><a href="/pages/westbrook-in-the-community" data-i18n="nav.subnav.accessibility"></a></li>
+                        <li><a href="/pages/westbrook-accessibility" data-i18n="nav.subnav.accessibility"></a></li>
                         <li><a href="/pages/westbrook-act-green-initiatives" data-i18n="nav.subnav.act_green"></a></li>
 					</ul>
                 </li>
@@ -126,7 +126,7 @@
                     </a>
                     <ul class="sub_menu hidden_now">
                        
-                        <li><a href="/mall-info" data-i18n="nav.subnav.mall_info"></a></li>
+                        <li><a href="/contact_us" data-i18n="nav.subnav.mall_info"></a></li>
                         <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
                         <li><a href="/jobs" data-i18n="nav.subnav.careers"></a></li>
 					</ul>
