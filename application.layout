@@ -47,8 +47,8 @@
     <script src="//mallmaverick.codecloudapp.com/mustache_mallmaverick.js?v=0.3"></script>
     
     <script>
-        setEndPoint('//lambton.mallmaverick.com/api/v4/lambton/all.json');
-        setSocialEndPoint('//lambton.mallmaverick.com/api/v4/lambton/social.json');
+        setEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/all.json');
+        setSocialEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/social.json');
         
         Cookies.set('primary_locale', 'en-CA');
         Cookies.set('secondary_locale', 'fr-CA');
