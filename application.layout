@@ -284,7 +284,7 @@
                             <ul>
                                 <li><a href="/hours" data-i18n="nav.subnav.hours"></a></li>
                                 <li><a href="/pages/westbrook-security" data-i18n="nav.subnav.securtiy"></a></li>
-                                <li><a href="/pages/westbrook-accessibility" data-i18n="nav.subnav.gift_cards"></a></li>
+                                <li><a href="/pages/westbrook-accessibility" data-i18n="nav.subnav.accessibility"></a></li>
                                 <li><a href="/services" data-i18n="nav.subnav.services"></a></li>
                                 <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
                             </ul>
