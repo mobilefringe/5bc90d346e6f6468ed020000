@@ -108,9 +108,9 @@
                     </a>
                     <ul class="sub_menu hidden_now">
                         <li><a href="/services" data-i18n="nav.subnav.services"></a></li>
-                        <li><a href="pages/lambton-gift-cards" data-i18n="nav.subnav.gift_cards"></a></li>
-                        <li><a href="/pages/lambton-act-green-initiatives" data-i18n="nav.subnav.act_green"></a></li>
-                        <li><a href="/pages/lambton-in-the-community" data-i18n="nav.subnav.in_community"></a></li>
+                        <li><a href="pages/westbrook-gift-cards" data-i18n="nav.subnav.gift_cards"></a></li>
+                        <li><a href="/pages/westbrook-act-green-initiatives" data-i18n="nav.subnav.act_green"></a></li>
+                        <li><a href="/pages/westbrook-in-the-community" data-i18n="nav.subnav.in_community"></a></li>
 					</ul>
                 </li>
                 <li>
