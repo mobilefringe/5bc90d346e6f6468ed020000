@@ -15,7 +15,7 @@
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
-            <option value="/leasing" data-i18n="inside_page.hours"></option>
+            <option value="/leasing" data-i18n="inside_page.leasing"></option>
             <option value="/about-us" data-i18n="inside_page.about"></option>
             <option value="/directions-and-parking" data-i18n="inside_page.directions"></option>
         </select>
