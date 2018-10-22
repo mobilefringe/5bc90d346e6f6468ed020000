@@ -1,0 +1,123 @@
+{
+	"header": {
+	    "todays_hours": "Today's Hours",
+	    "check_hours": "View Holiday Hours"
+	},
+	"footer": {
+	    "newsletter_title": "Subscribe to Receive Our Updates",
+	    "newsletter_tagline": "Fashion • Events • Sales",
+	    "newsletter_submit": "Sign Up",
+	    "social_title": "Social Media",
+	    "social_subtitle": "Follow us on social media for news and activities.",
+	    "site_map": "Site Map",
+	    "power": "Powered by",
+	    "contact": "Client Service Centre"
+	},
+	"nav": {
+	    "menu": "Menu",
+		"stores": "Stores",
+		"blog": "Blog",
+		"about": "About Us",
+		"promos": "Promotions",
+		"contest_events": "Contest & Events",
+		"guest_services": "Guest Services",
+		"subnav": {
+			"directory": "Directory",
+	        "map": "Shopping Map",
+	        "whats_new": "What's New",
+			"services": "Services",
+			"gift_cards": "Gift Cards",
+			"act_green": "ACT Green",
+			"in_community": "In The Community",
+			"hours": "Shopping Hours",
+			"mall_info": "Mall Info",
+		    "leasing": "Leasing",
+			"careers": "Careers"
+		}
+	},
+	"home": {
+		"insta": "Follow Us On Instagram",
+		"hours": "Shopping Hours",
+		"hours_link": "See More Hours"
+	},
+	"inside_page": {
+	    "header_tagline": "EXPLORE • ENJOY • SHOP",
+	    "mobile_menu": "Tap For More Options",
+	    "stores": "Stores",
+	    "map": "Shopping Map",
+	    "whats_new": "What's New",
+	    "blog": "Blog",
+	    "events": "Events",
+	    "deals": "Promotions",
+	    "guest_services": "Guest Services",
+	    "services": "Services",
+	    "gift_cards": "Gift Cards",
+	    "contact": "Contact Us",
+	    "hours": "Hours",
+		"mall_info": "Mall Info",
+	    "leasing": "Leasing",
+		"careers": "Careers",
+	    "share": "Share: ",
+	    "act_green": "ACT Green",
+	    "in_community": "Community",
+	    "mall_photos": "Mall Photos"
+	},
+	"stores": {
+	    "title": "Stores",
+	    "new_stores": "New Stores",
+	    "coming_soon": "Coming Soon",
+	    "category": "Categories",
+	    "categories_all": "All",
+	    "back_btn": "Back to Stores",
+	    "store_promo": "Promotions",
+	    "store_job": "Careers",
+	    "store_details": "Visit Store Details",
+	    "store_phone": "Phone",
+	    "store_website": "Website"
+	},
+	"map": {
+	    "title": "Shopping Map",
+	    "find_store": "Find A Store",
+	    "scroll_up": "Scroll Up",
+	    "scroll_down": "Scroll Down",
+	    "select": "Select a Store"
+	},
+	"blog": {
+	    "title": "Blog",
+	    "return": "Return to Blog",
+	    "posted": "Posted On:"
+	},
+	"events": {
+	    "title": "Events",
+	    "no_events": "There are no Events scheduled at this time. Please check back soon!",
+	    "return": "Return to Events"
+	},
+	"promos": {
+	    "title": "Promotions",
+	    "no_deals": "There are no Promotions scheduled at this time. Please check back soon!",
+	    "return": "Return to Promotions"        
+	},
+	"jobs": {
+	    "title": "Careers",
+	    "no_jobs": "There are no Job postings at this time. Please check back soon!",
+	    "return": "Return to Careers"    
+	},
+	"hours": {
+	    "title": "Shopping Hours",
+	    "regular_hours": "Regular Hours",
+	    "reduced_hours": "Reduced Hours of Operation",
+	    "closed_hours": "Holiday Closures"
+	},
+    "directions": {
+        "title": "Directions & Parking"    
+    },
+    "newsletter": {
+        "title": "Newsletter",
+        "name": "Name",
+        "email": "Email",
+        "agree": "I agree to receive communications from Lambton Mall.",
+        "subscribe": "Subscribe",
+        "thank_you": "Thank you!",
+        "message": "Your subscription has been confirmed. You've been added to our list and will hear from us soon."
+    }
+}
