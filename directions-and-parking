@@ -1,0 +1,102 @@
+<style>
+    @media(max-width: 425px){
+        .main_banner h2 {
+            padding-top: 38px;
+        }
+    }
+</style>
+<div class="main_banner text-center">
+    <h2 data-i18n="directions.title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/contact-us" data-i18n="inside_page.contact"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/about-us" data-i18n="inside_page.about"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5 class="active_heading" data-i18n="inside_page.directions"></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
+            <option value="/contact-us" data-i18n="inside_page.contact"></option>
+            <option value="/hours" data-i18n="inside_page.hours"></option>
+            <option value="/about-us" data-i18n="inside_page.about"></option>
+        </select>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-12">
+                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.277992600631!2d-65.68015894857518!3d47.64016449354944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4c9893c52cc34b67%3A0x512d77068cb3ddd!2sPlace+Bathurst+Mall%2C+1300+St+Peter+Ave%2C+Bathurst%2C+NB+E2A+3A6!5e0!3m2!1sen!2sca!4v1531432888458" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+                <iframe class="hidden-xs" src="https://maps.google.nl/maps?q=Lambton Mall 1380 London Rd Sarnia  Ontario N7S 1P8&amp;hl=en&amp;ie=UTF8&amp;t=v&amp;hnear=Lambton Mall 1380 London Rd Sarnia  Ontario N7S 1P8&amp;z=13&amp;output=embed" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                <hr>
+                <h2 id="directions_title"></h2>
+                <div id="directions_content"></div>
+                <hr>
+                <h2 id="parking_title"></h2>
+                <div id="parking_content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("Directions Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center no-repeat"  });
+                }
+            }
+            
+            var prefix = get_prefix();
+            var directions_json = prefix + "/pages/westbrook-directions.json"
+            $.getJSON(directions_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    $('#directions_title').html(data.title);
+                    $('#directions_content').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#directions_title').html(data.title_2);
+                    $('#directions_content').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                    $("#404_msg").fadeIn("fast");
+                }
+            }); 
+            
+            var parking_json = prefix + "/pages/westbrook-parking.json"
+            $.getJSON(parking_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    $('#parking_title').html(data.title);
+                    $('#parking_content').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#parking_title').html(data.title_2);
+                    $('#parking_content').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                    $("#404_msg").fadeIn("fast");
+                }
+            }); 
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
