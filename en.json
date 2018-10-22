@@ -22,7 +22,7 @@
 		"events": "Events",
 		"guest_services": "Our Services",
 		"careers": "Careers",
-		"about_us": "About Us"
+		"about_us": "About Us",
 		"subnav": {
 			"directory": "Directory",
 	        "map": "Shopping Map",
@@ -54,13 +54,12 @@
 	    "gift_cards": "Gift Cards",
 	    "contact": "Contact Us",
 	    "hours": "Hours",
-		"mall_info": "Mall Info",
-	    "leasing": "Leasing",
-		"careers": "Careers",
-	    "share": "Share: ",
-	    "act_green": "ACT Green",
-	    "in_community": "Community",
-	    "mall_photos": "Mall Photos"
+		"security": "Security",
+			"accessibility": "Accesibility",
+			"act_green": "ACT Green Initiatives",
+			"in_community": "In The Community",
+			"contact_us": "Contact Us",
+		    "leasing": "Leasing"
 	},
 	"stores": {
 	    "title": "Stores",
