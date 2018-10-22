@@ -126,6 +126,10 @@
                 $("#in_community").show();
                 
             }
+            else if (slug == 'lambton-in-the-community'){
+                $("#in_community").show();
+                
+            }
             show_content();
         }
         loadMallDataCached(renderAll); 
