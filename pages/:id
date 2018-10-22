@@ -52,7 +52,7 @@
         </select>
     </h5>
 </div>
-<div class="store_list_head main_container hidden_now" id="security">
+<div class="store_list_head main_container hidden_now" id="accessibility">
     <div class="row hidden_phone">
         <div class="col-md-3">
             <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
