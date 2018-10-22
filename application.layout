@@ -274,7 +274,7 @@
                         <div class="col-md-6 col-xs-6">
                             <ul>
                                 <li><a href="/stores" data-i18n="nav.subnav.directory"></a></li>
-                                <li><a href="/map" data-i18n="nav.subnav.nap"></a></li>
+                                <li><a href="/map" data-i18n="nav.subnav.map"></a></li>
                                 <li><a href="/events" data-i18n="nav.events"></a></li>
                                 <li><a href="/promotions" data-i18n="nav.promos"></a></li>
                                 <li><a href="/jobs" data-i18n="nav.careers"></a></li>
