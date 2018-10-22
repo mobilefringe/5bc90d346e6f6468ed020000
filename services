@@ -1,0 +1,119 @@
+<div class="main_banner text-center">
+    <h2 data-i18n="inside_page.services"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5 class="active_heading" data-i18n="inside_page.services"></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/gift-cards" data-i18n="inside_page.gift_cards"></a></h5>
+        </div>
+         <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+        </div>
+         <div class="col-md-3">
+            <h5><a href="/pages/westbrook-in-the-community" data-i18n="inside_page.in_community"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
+            <option value="/gift-cards" data-i18n="inside_page.gift_cards"></option>
+            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+            <option value="/pages/westbrook-in-the-community" data-i18n="inside_page.in_community"></option>
+        </select>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding services_container">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="mm_page_title"></h1>
+                <div id="mm_page_content"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="mm_page_title_2"></h1>
+                <div id="mm_page_content_2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="mm_page_title_3"></h1>
+                <div id="mm_page_content_3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("Guest Services Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var prefix = get_prefix();
+            //get guest services json
+            var g_pages_json = prefix + "/pages/westbrook-guest-services.json"
+            $.getJSON(g_pages_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    
+                    $('#mm_page_title').text(data.title);
+                    $('#mm_page_content').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#mm_page_title').text(data.title_2);
+                    $('#mm_page_content').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                   console.log("Error loading ", g_pages_json);
+                }
+            }); 
+            //get accessibility json
+            var a_pages_json = prefix + "/pages/westbrook-accessibility.json"
+            $.getJSON(a_pages_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    $('#mm_page_title_2').text(data.title);
+                    $('#mm_page_content_2').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#mm_page_title_2').text(data.title_2);
+                    $('#mm_page_content_2').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                   console.log("Error loading ", a_pages_json);
+                }
+            }); 
+            // get mall walkers json
+            var m_pages_json = prefix + "/pages/westbrook-mall-walkers-club.json"
+            $.getJSON(m_pages_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    $('#mm_page_title_3').text(data.title);
+                    $('#mm_page_content_3').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#mm_page_title_3').text(data.title_2);
+                    $('#mm_page_content_3').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                   console.log("Error loading ", m_pages_json);
+                }
+            }); 
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
