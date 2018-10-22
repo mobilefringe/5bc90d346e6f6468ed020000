@@ -30,25 +30,25 @@
 <div class="store_list_head main_container hidden_now" id="security">
     <div class="row hidden_phone">
         <div class="col-md-3">
-            <h5><a href="/services" data-i18n="inside_page.services"></a></h5>
+            <h5 class="active_heading" data-i18n="inside_page.hours"></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/gift-cards" data-i18n="inside_page.gift_cards"></a></h5>
+            <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
         </div>
-         <div class="col-md-3">
-            <h5><a href="/pages/lambton-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
         </div>
-         <div class="col-md-3">
-            <h5 class="active_heading" data-i18n="inside_page.in_community"></h5>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
-            <option value="/services" data-i18n="inside_page.services"></option>
-            <option value="/gift-cards" data-i18n="inside_page.gift_cards"></option>
-            <option value="/pages/lambton-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+            <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
+            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
+            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
         </select>
     </h5>
 </div>
