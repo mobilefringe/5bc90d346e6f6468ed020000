@@ -52,7 +52,31 @@
         </select>
     </h5>
 </div>
-
+<div class="store_list_head main_container hidden_now" id="security">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5  class="active_heading" data-i18n="inside_page.security"></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
+            <option value="/hours" data-i18n="inside_page.hours"></option>
+            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
+            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+        </select>
+    </h5>
+</div>
 <div class="margin_20"></div>
 <div class="content_container main_container mobile_padding pages_text">
     <div class="row">
