@@ -1,0 +1,315 @@
+<html lang="en">
+<head>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="{{meta_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:image" content="{{meta_image}}">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,initial-scale=1">
+    <meta name="description" content="{{meta_description}}">
+    <meta name="keywords" content="{{meta_keywords}}">
+    <meta name="author" content="">
+    
+    <title>{{meta_title}}</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/vnd.microsoft.icon/1534445369000/favicon.ico">
+
+    <!--CSS-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//codecloud.cdn.speedyrails.net/sites/5ae8c1fe6e6f6473fd160000/text/css/1522163605908/mapplic.css" rel="stylesheet">
+    <link href="//codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/css/1485967426000/map.css" rel="stylesheet">
+    <link href="/scaffold.css" rel="stylesheet">
+    <link href="/application.css" rel="stylesheet">
+    
+    <!--Javascript-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/587659fb6e6f641648010000/text/javascript/1485895011000/moment-with-locales.min.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/579231876e6f6467cf000000/application/x-javascript/1468507661000/moment-timezone-with-data.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/5438407c6e6f64462d020000/601617fe9ab691b1b62a66ac3ca3e8b7/jquery.cookie.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/58fe54076e6f6458dc010000/application/x-javascript/1493132969000/js.cookie.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="/application.js" type="text/javascript"></script>
+    <script src="/helpers.js" type="text/javascript"></script>
+    
+    <!--MallMaverick SDK-->
+    <script src="//mallmaverick.codecloudapp.com/mallmaverick_v4.js"></script>
+    <script src="//mallmaverick.codecloudapp.com/mustache_mallmaverick.js?v=0.3"></script>
+    
+    <script>
+        setEndPoint('//lambton.mallmaverick.com/api/v4/lambton/all.json');
+        setSocialEndPoint('//lambton.mallmaverick.com/api/v4/lambton/social.json');
+        
+        Cookies.set('primary_locale', 'en-CA');
+        Cookies.set('secondary_locale', 'fr-CA');
+
+        if(getRequestParam('locale') == 'en'){
+            setCurrentLocale(Cookies.get('primary_locale'));
+        } else if(getRequestParam('locale') == 'fr'){
+            setCurrentLocale(Cookies.get('secondary_locale'));
+        }
+    </script>
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-40014802-29', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="">
+    <div class="mobile_menu_container">
+        <div class="opened_mobile_menu">
+            <h3>
+                <span data-i18n="nav.menu"></span>
+                <span id="close_menu" class="pull-right"><img class="menu_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166976000/close_menu.png"  alt="Close Menu"></span>        
+            </h3>
+            <ul>
+                <li>
+                    <a href="#" class="submenu_expander open">
+                        <span data-i18n="nav.stores"></span>
+                        <img class="menu_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166990000/open_submenu.png" alt="" style="display: none;">
+						<img class="menu_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461179572000/close_submenu.png" alt="" style="display: inline;">
+                    </a>
+                    <ul class="sub_menu">
+						<li><a href="/stores" data-i18n="nav.subnav.directory"></a></li>
+						<li><a href="/map" data-i18n="nav.subnav.map"></a></li>
+					</ul>
+                </li>
+                <li>
+                    <a href="/promotions">
+                        <span data-i18n="nav.promos"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/events">
+                        <span data-i18n="nav.contest_events"></span>
+                    </a>
+                </li>
+                 <li>
+                    <a href="#"  class="submenu_expander">
+                        <span data-i18n="nav.guest_services"></span>
+                        <img class="menu_icon plus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166990000/open_submenu.png" alt="" style="display: inline;">
+						<img class="menu_icon minus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461179572000/close_submenu.png" alt="" style="display: none;">
+                    </a>
+                    <ul class="sub_menu hidden_now">
+                        <li><a href="/services" data-i18n="nav.subnav.services"></a></li>
+                        <li><a href="pages/lambton-gift-cards" data-i18n="nav.subnav.gift_cards"></a></li>
+                        <li><a href="/pages/lambton-act-green-initiatives" data-i18n="nav.subnav.act_green"></a></li>
+                        <li><a href="/pages/lambton-in-the-community" data-i18n="nav.subnav.in_community"></a></li>
+					</ul>
+                </li>
+                <li>
+                    <a href="/posts">
+                        <span data-i18n="nav.blog"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"  class="submenu_expander">
+                        <span data-i18n="nav.about"></span>
+                        <img class="menu_icon plus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166990000/open_submenu.png" alt="" style="display: inline;">
+						<img class="menu_icon minus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461179572000/close_submenu.png" alt="" style="display: none;">
+                    </a>
+                    <ul class="sub_menu hidden_now">
+                        <li><a href="/hours" data-i18n="nav.subnav.hours"></a></li>
+                        <li><a href="/mall-info" data-i18n="nav.subnav.mall_info"></a></li>
+                        <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
+                        <li><a href="/jobs" data-i18n="nav.subnav.careers"></a></li>
+					</ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="fixed_header">
+        <div class="news-ticker" data-speed="5000">
+            <ul class="bulletin" id="bulletin"></ul>
+        </div>
+        <section class="content_container main_container position_relative">
+            <div class="row header mobile_margin">
+                <div class="col-md-4 col-xs-12">
+                <div id="google_translate_element"></div>
+                    <script type="text/javascript">
+                        function googleTranslateElementInit() {
+                          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,zh-CN,zh-TW,es,tl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-40014802-29'}, 'google_translate_element');
+                        }
+                        /*!
+                         * Capture Analytics for Google Translate
+                         * As of 2016, the Google Translate toolbar still only works with the old-style analytics (ga.js)
+                         * The code below mocks the old analytics object, captures the events and passes them to the new Universal Analytics (analytics.js)
+                         *
+                         * Source: http://webmasters.stackexchange.com/a/101787/18749
+                         * Copyright (c) Simon East 2016, for yump.com.au
+                         * Free to use under MIT licence <https://opensource.org/licenses/MIT>
+                         */
+                        window._gaq = {}; window._gat = {};
+                        window._gat._getTracker = window._gat._getTrackerByName = function(){ return {
+                          _trackEvent: function(eventCategory, eventAction, eventLabel) {
+                            // [0] will send the event to the first analytics ID on the page (in case you have multiple)
+                            if (window.ga && ga.getAll()[0]) {
+                              ga.getAll()[0].send('event', eventCategory, eventAction, eventLabel);
+                              window.console && console.log('Translation event sent to Google Analytics:', eventCategory, eventAction, eventLabel);
+                            } else {
+                              window.console && console.warn('Could not locate Google Analytics when attempting to log translation events.')
+                            }
+                          }
+                        }}
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    
+                    <div class="language_toggle_mobile hide">
+      					<a href="?locale=en" id="set_lang_en_m">EN</a> |
+      					<a href="?locale=fr" id="set_lang_fr_m">FR</a>
+					</div>
+                    <p class="hours_home hidden_phone"><span class="hours_dot"></span> 
+                        <span data-i18n="header.todays_hours"></span>
+                        <span id="home_hours_container">
+                            <script id="home_hours_template" type="x-tmpl-mustache/text">
+                                <span class="hours_today" id="hours_home">{%raw%}{{h}}{%endraw%}</span>
+                            </script>
+                        </span>
+                    </p>
+                    <a href="/hours" class="holiday_hours_home soft_hidden_phone" data-i18n="header.check_hours"></a>
+                </div>
+                <div class="col-md-4 col-xs-2 show_phone"></div>
+                <div class="col-md-4 col-xs-8 text-center">
+                    <a href="/">
+                        <img src="//codecloud.cdn.speedyrails.net/sites/5bad55136e6f646976330000/image/png/1538086523239/lambton_logo.png" class="main_logo " alt="Lambton Mall Logo">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-2 text-right position_relative">
+                    <div class="language_toggle hide">
+      					<a href="?locale=en" id="set_lang_en">EN</a> |
+      					<a href="?locale=fr" id="set_lang_fr">FR</a>
+					</div>
+                    <img src="//codecloud.cdn.speedyrails.net/sites/57f7f01f6e6f647835890000/image/png/1460488452000/icon_menu.png" class="open_menu" alt="Open Menu">
+                </div>
+                <div class="col-xs-12 show_phone home_hours_phone">
+                    <p class="hours_home">
+                        <span class="hours_dot"></span>
+                        <span data-i18n="header.todays_hours"></span>
+                        <span id="home_hours_container3">
+                            <script id="home_hours_template3" type="x-tmpl-mustache/text">
+                                <span class="hours_today">{%raw%}{{h}}{%endraw%}</span>
+                            </script>
+                        </span>
+                    </p>
+                    <a class="holiday_hours_home" href="/hours" data-i18n="header.check_hours"></a>
+                </div>
+            </div>
+            <div class="hedaer_divider"></div>
+        </section>
+    </div>
+    <h1 class="accessibility">Lambton Mall</h1>
+    <section class="yield">
+        {{yield}}
+    </section>
+
+    <section class="content_container main_container">
+        <div class="newsletter_container text-center">
+            <h3 class="heading" data-i18n="footer.newsletter_title"></h3>
+            <p class="newsletter_desc" data-i18n="footer.newsletter_tagline"></p>
+            <a href="/newsletter" class="newsletter_btn animated_btn" data-i18n="footer.newsletter_submit"></a>
+        </div>
+        <div class="site_map">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="">
+                        <h3 class="site_map_heading" data-i18n="footer.social_title"></h3>
+                        <p class="site_map_desc" data-i18n="footer.social_subtitle"></p>
+                        <div class="social_icons">
+                            <a href="https://www.facebook.com/lambtonmall/" target="_blank">
+                                <!--<span id="social_fb"></span>-->
+                                <span><i class="fa fa-facebook"></i></span>
+                                <p style="display: none;">Facebook</p>
+                            </a>
+                            <a href="https://twitter.com/LambtonMall" target="_blank">
+                                <span><i class="fa fa-twitter"></i></span>
+                                <p style="display: none;">Twitter</p>
+                            </a>
+                            <a href="https://www.instagram.com/lambtonmall/" target="_blank">
+                                <span><i class="fa fa-instagram"></i></span>
+                                <p style="display: none;">Instagram</p>
+                            </a>
+                            <a href="https://www.pinterest.ca/lambtoncentre/" target="_blank">
+                                <span><i class="fa fa-pinterest"></i></span>
+                                <p style="display: none;">Pinterest</p>
+                            </a>
+                            <a href="https://plus.google.com/+lambtonmall" target="_blank">
+                                <span><i class="fa fa-google-plus"></i></span>
+                                <p style="display: none;">Google Plus</p>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UC_53DAYXttXXmPjfWZqkvRg" target="_blank">
+                                <span><i class="fa fa-youtube"></i></span>
+                                <p style="display: none;">Youtube</p>
+                            </a>
+                            <!--<a href="/newsletter">-->
+                            <!--    <span id="social_newsletter"></span>-->
+                            <!--    <p style="display: none;">Newsletter</p>-->
+                            <!--</a>-->
+                            <div class="clearfix"></div>
+                            <br class="hidden_phone" />
+                        </div>
+                        <p class="rights_reserved">
+                            <span data-i18n="footer.power"></span> <a href="//mallmaverick.com" target="_blank">Mall Maverick</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 left_right_border">
+                    <h3 class="site_map_heading" data-i18n="footer.site_map"></h3>
+                    <div class="row footer_site_map">
+                        <div class="col-md-6 col-xs-6">
+                            <ul>
+                                <li><a href="/stores" data-i18n="nav.subnav.directory"></a></li>
+                                <li><a href="/posts" data-i18n="nav.blog"></a></li>
+                                <li><a href="/events" data-i18n="nav.events"></a></li>
+                                <li><a href="/promotions" data-i18n="nav.promos"></a></li>
+                                <li><a href="/jobs" data-i18n="nav.careers"></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <ul>
+                                <li><a href="/hours" data-i18n="nav.subnav.hours"></a></li>
+                                <li><a href="/mall-info" data-i18n="nav.subnav.mall_info"></a></li>
+                                <li><a href="/pages/lambtonmall-gift-cards" data-i18n="nav.subnav.gift_cards"></a></li>
+                                <li><a href="/services" data-i18n="nav.subnav.services"></a></li>
+                                <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="site_map_heading">&copy; <span id="current_year"></span> - Lambton Mall</h3>
+                    <p class="rights_reserved">
+                        <a href="https://goo.gl/maps/X9vpPnMnAMT2r" target="_blank">
+                            1380 London Rd<br> 
+                            Sarnia, ON N7S 1P8
+                        </a>
+                        <br/>
+                        <!--<span data-i18n="footer.contact"></span>: <a href="tel:506 546-9194">(506) 546-9194</a><br />-->
+                        <a href="http://www.cushmanwakefield.ca/en/" target="_blank">
+                            <img src="//codecloud.cdn.speedyrails.net/sites/59c3f9f46e6f646526050000/image/png/1509381758000/CW Logos-_CW_Colorlogo.png" class="management_logo" alt="Cushman & Wakefield Logo">
+                        </a>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/i18next/1.6.3/i18next-1.6.3.min.js"></script>
+</body>
+
+</html>
