@@ -95,7 +95,7 @@
                 }
             }); 
             //get accessibility json
-            var a_pages_json = prefix + "/pages/lambton-security.json"
+            var a_pages_json = prefix + "/pages/westbrook-security.json"
             $.getJSON(a_pages_json).done(function(data) {
                 if(Cookies.get('current_locale') == "en-CA"){
                     $('#mm_page_title_2').text(data.title);
