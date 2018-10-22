@@ -24,11 +24,11 @@
 		"subnav": {
 			"directory": "Directory",
 	        "map": "Shopping Map",
-			"services": "Services",
+			"hours": "Shopping Hours",
+			"security": "Security",
 			"gift_cards": "Gift Cards",
 			"act_green": "ACT Green",
 			"in_community": "In The Community",
-			"hours": "Shopping Hours",
 			"mall_info": "Mall Info",
 		    "leasing": "Leasing",
 			"careers": "Careers"
