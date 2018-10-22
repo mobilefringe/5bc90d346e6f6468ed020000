@@ -283,7 +283,7 @@
                         <div class="col-md-6 col-xs-6">
                             <ul>
                                 <li><a href="/hours" data-i18n="nav.subnav.hours"></a></li>
-                                <li><a href="/pages/westbrook-gift-cards" data-i18n="nav.subnav.securtiy"></a></li>
+                                <li><a href="/pages/westbrook-security" data-i18n="nav.subnav.securtiy"></a></li>
                                 <li><a href="/pages/lambtonmall-gift-cards" data-i18n="nav.subnav.gift_cards"></a></li>
                                 <li><a href="/services" data-i18n="nav.subnav.services"></a></li>
                                 <li><a href="/leasing" data-i18n="nav.subnav.leasing"></a></li>
