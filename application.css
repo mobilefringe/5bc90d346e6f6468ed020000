@@ -2617,7 +2617,8 @@ g.mapplic-active > * {
         }
     }
     .main_logo{
-        max-width: 100%;
+           max-width: 100%;
+    margin-top: 35px;
     }
     .search_field{
         height: 31px;
