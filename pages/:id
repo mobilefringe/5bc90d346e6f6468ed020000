@@ -126,7 +126,7 @@
                 $("#security").show();
                 
             }
-            else if (slug == 'lambton-in-the-community'){
+            else if (slug == 'westbrook-accessability'){
                 $("#accessibility").show();
                 
             }
