@@ -33,14 +33,32 @@
 </div>
 <div class="home_banner">
     <div class="flexslider text-center">
+        <!-- UNCOMMENT FOR DYMANIC CONTENT -->
+        <!--<ul class="slides" id="home_banner">-->
+        <!--    <script id="banner_template" type="x-tmpl-mustache/text">-->
+        <!--        <li class="position_relative">-->
+        <!--            {{#url}}<a href="{{url}}" {{css}} onclick="{{noLink}}">{{/url}}-->
+        <!--                <div class="hero_banner" style="background-image: url({{image_url}})"></div>-->
+        <!--            </a>-->
+        <!--        </li>-->
+        <!--    </script>-->
+        <!--</ul>-->
         <ul class="slides" id="home_banner">
-            <script id="banner_template" type="x-tmpl-mustache/text">
-                <li class="position_relative">
-                    {{#url}}<a href="{{url}}" {{css}} onclick="{{noLink}}">{{/url}}
-                        <div class="hero_banner" style="background-image: url({{image_url}})"></div>
-                    </a>
-                </li>
-            </script>
+            <li class="position_relative">
+                <a href="/stores" {{css}}>
+                    <div class="hero_banner" style="background-image: url('https://picsum.photos/1920/540?image=770')"></div>
+                </a>
+            </li>
+            <li class="position_relative">
+                <a href="/stores" {{css}}>
+                    <div class="hero_banner" style="background-image: url('https://picsum.photos/1920/540?image=773')"></div>
+                </a>
+            </li>
+            <li class="position_relative">
+                <a href="/stores" {{css}}>
+                    <div class="hero_banner" style="background-image: url('https://picsum.photos/1920/540?image=774')"></div>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
