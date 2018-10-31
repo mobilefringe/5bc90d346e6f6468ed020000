@@ -150,7 +150,7 @@
         function renderAll(){
             var banners = getBanners();
             // renderBanner('#banner_template','#home_banner',banners);
-             var property = [getPropertyDetails()];
+            var property = [getPropertyDetails()];
             renderGeneral('#welcome_msg_container','#welcome_msg_template',property);
             
             loadSocialFeeds(render_social)
