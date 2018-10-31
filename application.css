@@ -495,6 +495,33 @@ h4 {
     position: relative;
     height: auto;
     text-align: center;
+    .banner_text{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        h3 {
+            margin:0;
+            font-size: 70px;
+            color: #FFF;
+            letter-spacing: 4px;
+            // padding-top: 140px;
+            // padding-top: 500px;
+            margin-bottom: 10px;
+            // font-weight: 300;
+            font-family:'Moments';
+            text-shadow: 1px 1px rgba(0,0,0,0.2);
+        }
+        p{
+            font-size: 24px;
+            color: #fff;
+            letter-spacing: 0.5px;
+            margin-bottom:32px;
+            text-transform: uppercase;
+            font-family:$font_family;
+            text-shadow: 1px 1px rgba(0,0,0,0.2);
+        }
+    }
 }
 .hero_banner{
     background-color:#000;
