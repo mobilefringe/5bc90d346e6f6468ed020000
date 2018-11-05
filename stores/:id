@@ -1,0 +1,360 @@
+<div id="store_container">
+    <script id="store_template" type="x-tmpl-mustache/text">
+        <div class="main_banner text-center">
+            <h2>{{name}}</h2>
+            <p data-i18n="inside_page.header_tagline"></p>
+        </div>
+        <div class="main_container content_container">
+            <div class="store_list_head">
+                <div class="row">
+                    <div class="col-md-12 store_top">
+                        <h5 class="back_btn show_phone"><i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/stores" class="store_anchors active_heading"><span data-i18n="stores.back_btn"></span></a></h5>
+                        <span class="soft_hidden_phone store_anchors active_heading"><i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/stores"><span data-i18n="stores.back_btn"></span></a></span>
+                        <div class="store_details_anchors pull-right">
+                            <a id="promo_anchor" href="#promos_main" class="store_anchors active_heading">
+                                <span data-i18n="stores.store_promo"></span> (<span></span>)
+                            </a>
+                            <a id="job_anchor" href="#jobs_main" class="store_anchors active_heading">
+                                <span data-i18n="stores.store_job"></span> (<span></span>)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin_25_across">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="details_desc">
+                            <img class="margin_20 img-responsive" style="{{show_store_front}}" src="{{store_front_alt_url_abs}}" alt="{{name}} Store Front" />
+                            
+                            <div class="map-container">
+                                <div id="mapsvg_store_detail"></div>
+                            </div>
+                            <div class=" store_desc hidden_phone">
+                                <div class="margin_20 primary-locale">{{{rich_description}}}</div>
+                                <div class="margin_20 secondary-locale">{{{rich_description_2}}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="margin_20 store_logo center-block" src="{{store_front_url_abs}}"/>
+                        <div class="side_stores">
+                            <a class="animated_btn newsletter_btn" href="tel:{{phone}}" style="{{phone_show}}">
+                                <span data-i18n="stores.store_phone"></span>: {{phone}}
+                            </a>
+                            <a class="animated_btn newsletter_btn" href="//{{website}}" target="_blank" style="{{show}}">
+                                <span data-i18n="stores.store_website"></span>
+                            </a>
+                            <div class="store_desc show_phone">
+                                <div class="margin_20 primary-locale">{{{rich_description}}}</div>
+                                <div class="margin_20 secondary-locale">{{{rich_description_2}}}</div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </script>
+</div>
+<div class="main_container content_container">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-8 promo_item" id="promos_main">
+                <h2 class="store_details_promo_heading">
+                    <span data-i18n="stores.store_promo"></span>
+                </h2>
+                <div id="promos_container">
+                    <script id="promos_template" type="x-tmpl-mustache/text">
+                        <div class="row promo_item">
+                            <div class="primary-locale">
+                                <div class="col-sm-4">
+                                    <img class="promo_store_image" src="{{promo_image_url_abs}}" alt="{{name}}" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <h2 class="promo_list_name">{{name}}</h2>
+                                    <p>
+                                        <span class="promo_dates">{{dates}}</span>
+                                    </p>
+                                    <div class="promo_list_desc">{{description_short}}</div>
+                                    <a class="read_more" href="/promotions/{{slug}}">See Promotion Details <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="secondary-locale">
+                                <div class="col-md-4">
+                                    <img class="promo_store_image" src="{{promo_image_url_abs}}" alt="{{name_2}}" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h2 class="promo_list_name">{{name_2}}</h2>
+                                    <p>
+                                        <span class="promo_dates">{{dates}}</span>
+                                    </p>
+                                    <div class="promo_list_desc">{{description_short_2}}</div>
+                                    <a class="read_more" href="/promotions/{{slug}}">Voir les détails de la promotion <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+            <div class="col-md-8 promo_item" id="jobs_main">
+                <h2 class="store_details_promo_heading">
+                    <span data-i18n="stores.store_job"></span>
+                </h2>
+                <div id="jobs_container">
+                    <script id="jobs_template" type="x-tmpl-mustache/text">
+                        <div class="row promo_item">
+                            <div class="primary-locale">
+                                <div class="col-md-3">
+                                    <div class="cropped_image">
+                                        <img src="{{img_url}}" alt="{{store_name}} Logo" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="promo_list_name">{{name}}</h2>
+                                    <p>
+                                        <span class="promo_store">{{job_type}}</span><span class="hidden_phone"> | </span>
+                                        <span class="promo_dates">End Date: {{end_date}}</span>
+                                    </p>
+                                    <div class="promo_list_desc">{{description_short}}</div>
+                                    <a class="read_more" href="/jobs/{{slug}}">View Posting Details <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="secondary-locale">
+                                <div class="col-md-3">
+                                    <div class="cropped_image">
+                                        <img src="{{img_url}}" alt="{{store_name}} Logo" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="promo_list_name">{{name_2}}</h2>
+                                    <p>
+                                        <span class="promo_store">{{job_type}}</span><span class="hidden_phone"> | </span>
+                                        <span class="promo_dates">Date de fin: {{end_date}}</span>
+                                    </p>
+                                    <div class="promo_list_desc">{{{description_short_2}}}</div>
+                                    <a class="read_more" href="/jobs/{{slug}}">Détails du poste <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script src="//codecloud.cdn.speedyrails.net/sites/5a9eeaa46e6f6405fb150000/text/javascript/1520365246170/mapplic_mmsdk.js"></script>
+<script src="//codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/javascript/1484859750000/hammer.min.js"></script>
+
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll (){
+            // var banner_repo = getRepoDetailsByName("Directory Banner").images;
+            // if (banner_repo) {
+            //     var banner_image = banner_repo[0].image_url;
+            //     if (banner_image) {
+            //         $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+            //     }
+            // }
+                
+            var pathArray = window.location.pathname.split( '/' );
+            var slug = pathArray[pathArray.length-1];
+            var store_details = getStoreDetailsBySlug(slug);
+            if(store_details === undefined){
+                window.location = "/";
+            } else {
+                renderStoreDetails("#store_container","#store_template", store_details, slug);
+                
+                //PROMOS
+                var store_promo_ids = store_details.promotions
+                var store_promos = getPromotionsForIds(store_promo_ids).sortBy(function(o){ return o.start_date });
+                var published_promos = [];
+                $.each( store_promos , function( key, val ){
+                    today = moment();
+                    webDate = moment(val.show_on_web_date);
+                    if (today >= webDate) {
+                        published_promos.push(val)
+                    } 
+                });
+                if( published_promos.length > 0){
+                    renderPromotions("#promos_container","#promos_template", published_promos);
+                    $('#promo_anchor span').text(published_promos.length)
+                } else {
+                    $('#promos_main').hide()
+                    $('#promo_anchor').hide()
+                }
+                
+                // JOBS
+                var store_job_ids = store_details.jobs
+                var store_jobs = getJobsForIds(store_job_ids).sortBy(function(o){ return o.start_date });
+                var published_jobs = [];
+                $.each( store_jobs , function( key, val ){
+                    today = moment();
+                    webDate = moment(val.show_on_web_date);
+                    if (today >= webDate) {
+                        published_jobs.push(val)
+                    } 
+                });
+                if( published_jobs.length > 0){
+                    renderJobs('#jobs_container', '#jobs_template', published_jobs);
+                    $('#job_anchor span').text(published_jobs.length)
+                } else {
+                    $('#jobs_main').hide();
+                    $('#job_anchor').hide()
+                }
+                
+                // show_content();
+                
+                //MAP  
+                var stores = getStoresList();
+                var mall_json = {};
+                var landmarks = {};
+                mall_json.mapwidth = "1000";
+                mall_json.mapheight = "1000";
+                mall_json.categories = [];
+                mall_json.levels = [];
+    
+                // need to add the following for each floor we want to configure.
+                _.forEach(floorList(), function(value, key) {
+                    var floor_1 = {};
+                    floor_1.id = value.id;
+                    floor_1.title = value.title;
+                    floor_1.map = value.map;
+                    floor_1.show = value.show;
+                    floor_1.locations = [];
+                    var stores_on_floors= [];
+                    if( value.z_index === 0) {
+                        stores_on_floors = stores;
+                    } else {
+                        stores_on_floors = _.filter(stores, function(o) { if(o.z_coordinate == null) {return true;} else { return value.z_index === o.z_coordinate; }});
+                    }
+                    _.forEach(stores_on_floors, function(val, key) {
+                        //for testing limiting the store numbers to vm
+                        var temp_val = {};
+                        temp_val.id = val.id;
+                        temp_val.title = val.name;
+                        temp_val.about = val.description.substring(0, 200);
+                        if (val.categories != null) {
+                            if (val.categories.length > 1) {
+                                temp_val.category = val.categories[1];
+                            } else {
+                                temp_val.category = val.categories[0];
+                            }
+                        }
+                        temp_val.zoom = 2;
+                        temp_val.link = "/stores/" + val.slug;
+                        temp_val.pin = "hidden";
+    
+                        //get svg's width/height by checking the map
+                        var svg_width = 840;
+                        var svg_height = 700;
+                        temp_val.x = val.x_coordinate / svg_width;
+                        temp_val.y = val.y_coordinate / svg_height;
+                        
+                        // temp_val.zoom = "5";
+                        floor_1.locations.push(temp_val);
+                    });
+                    mall_json.levels.push(floor_1);
+                });
+    
+                map = $('#mapsvg_store_detail').mapplic({
+                    source: mall_json,
+                    height: 400,
+                    landmark: true,
+                    mapfill: true,
+                    minimap: false,
+                    sidebar: false,
+                    hovertip: true,
+                    developer: false,
+                    fullscreen: false,
+                    clearbutton: false,
+                    deeplinking: false,
+                    fillcolor: "none",
+                    maxscale: 1,
+                    skin: 'mapplic-dark',
+                    action: "tooltip"
+                });
+    
+                map.on('mapready', function(e, self) {
+                    // setTimeout(function(){
+                        // mapLoaded(map);
+                        
+                    // },700)
+                    self.showLocation(store_details.id);
+                    // self.addPin(store_details.id);
+                });
+            }
+        }
+        
+        // function mapLoaded(map) {
+        //     var pathArray = window.location.pathname.split('/');
+        //     var slug = pathArray[pathArray.length - 1];
+        //     var store_details = getStoreDetailsBySlug(slug);
+        //     self = map.data('mapplic');
+        //     var svg = document.getElementById('Layer_1');
+    
+        //     //get floors to be visible 
+        //     $(".mapplic-layer").show();
+        //     //go through all the regions and recalculat the locations
+        //     _.forEach(svgList(), function(val, key) {
+        //         if (val !== null) {
+        //             try {
+        //                 var element = document.getElementById(val);
+        //                 if (element) {
+        //                     elBBox = element.getBoundingClientRect();
+        //                     var viewport_center_x = 0;
+        //                     var viewport_center_y = 0;
+        //                     viewport_center_x = (_.toNumber(elBBox.left) + _.toNumber(elBBox.right)) / 2;
+        //                     viewport_center_y = (_.toNumber(elBBox.top) + _.toNumber(elBBox.bottom)) / 2;
+        //                     pt = svg.createSVGPoint();
+        //                     pt.x = viewport_center_x;
+        //                     pt.y = viewport_center_y;
+        //                     var svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+        //                     var new_x = svgP.x / 2500;
+        //                     var new_y = svgP.y / 2500;
+                            
+        //                     var location = self.getLocationData(val);
+        //                     if (location !== null && location.el) {
+        //                         location.x = new_x;
+        //                         location.y = new_y;
+                                
+        //                         if (store_details.svgmap_region == val) {
+        //                             location.pin = "black-pin";
+        //                         }
+        //                         self.updateLocation(val);
+    
+        //                         if (store_details.svgmap_region == val) {
+        //                             self.showLocation(val);
+        //                             self.addPin(val);
+        //                         }
+        //                     }
+        //                 }
+        //             } catch(error) {
+        //                 console.error(error);
+        //             }
+        //         }
+        //     });
+
+        //     //find which levels need to be hidden
+        //     hidden_level = _.filter(self.data.levels, function(o) {
+        //         return o.show !== true;
+        //     });
+            
+        //     //doing it in a loop for future cases where there are more than two floors
+        //     _.forEach(hidden_level, function(val, key) {
+        //         $(".mapplic-layer[data-floor='" + val.id + "']").hide();
+        //     });
+        // }
+
+        loadMallDataCached(renderAll);
+        
+        show_content();
+    });
+</script>
+<style>
+    .mapplic-popup-link,.mapplic-tooltip-close{
+        display:none!important;
+    }
+</style>
