@@ -99,10 +99,12 @@
             <div class="feature_item">
                 <div id="feature_3" class="position_relative"></div>
                 <div class="social_box text-center" id="social_fb">
-                     <span class="visible-sm-block visible-xs-block">
-                        <a href="https://www.facebook.com/WestbrookMall" target="_blank">
-                            <h5 id="fb_mobile" class="insta">LIKE US ON FACEBOOK</h5>
+                    <span class="hidden-sm hidden-xs">
+                        <div class="feature_insta_conatiner">
+                        <a href="https://twitter.com/westbrookmall" target="_blank">
+                            <h5 id="twitter_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
                         </a>        
+                    </div>
                     </span>
                     <span class="visible-sm-block visible-xs-block">
                         <a href="https://www.facebook.com/WestbrookMall" target="_blank">
