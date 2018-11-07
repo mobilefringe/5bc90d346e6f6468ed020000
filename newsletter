@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div id="mm_page_content" class="margin_20"></div>
                 <div class="newsletter_page">
-                    <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1AE79E510E7BBDA4CCB6FA7B7156A5F11E8B57CFC3C75414D0069ECA45F20A524EA63A60C7497FA20AEC254BC521307B8E">	
+                    <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1AD26A52548B5DFCE83FBD48560E33A9317AD1CD20773540D2A2C5D7BD3635A5BF3C57A32BD311DC2D2807ECBE2E04EE4F">
                         <div class="row">
                             <div class="col-sm-6">
                                 <label for="fieldName" data-i18n="newsletter.name"></label>
@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <label for="fieldEmail" data-i18n="newsletter.email"></label>
-                                <input id="fieldEmail" name="cm-ykblk-ykblk" type="email" class="js-cm-email-input" required />
+                                <input id="fieldEmail" name="cm-ykbz-ykbz" type="email" class="js-cm-email-input" required />
                             </div>
                         </div>
                         <div class="row">
