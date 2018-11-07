@@ -1,0 +1,120 @@
+<div class="main_banner text-center">
+    <h2 data-i18n="events.title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<!--<div class="store_list_head main_container">-->
+<!--    <div class="row hidden_phone">-->
+<!--        <div class="col-md-6">-->
+<!--            <h5><a href="/posts" data-i18n="inside_page.blog"></a></h5>-->
+<!--        </div>-->
+<!--        <div class="col-md-6">-->
+<!--            <h5 class="active_heading" data-i18n="inside_page.events"></h5>-->
+<!--        </div>-->
+<!--        <div class="col-md-3">-->
+<!--            <h5><a href="/promotions" data-i18n="inside_page.deals"></a></h5>-->
+<!--        </div>-->
+<!--        <div class="col-md-3">-->
+<!--            <h5><a href="/jobs" data-i18n="inside_page.careers"></a></h5>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <h5 class="text-center tap_here show_phone">-->
+<!--        <label class="accessibility" for="option_selector">Select an Option</label>-->
+<!--        <select id="option_selector" class="link_selector">-->
+<!--            <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>-->
+<!--            <option value="/posts" data-i18n="inside_page.blog"></option>-->
+<!--            <option value="/promotions" data-i18n="inside_page.deals"></option>-->
+<!--            <option value="/jobs" data-i18n="inside_page.careers"></option>-->
+<!--        </select>-->
+<!--    </h5>-->
+<!--</div>-->
+<div class="margin_20"></div>
+ <div class="content_container main_container">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="promos_container">
+                    <script id="promos_template" type="x-tmpl-mustache/text">
+                        <div class="primary-locale">
+                            <div class="row promo_item">
+                                <div class="col-md-3">
+                                    <div class="cropped_image">
+                                        <img src="{{event_image_url_abs}}" alt="{{name}}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="promo_list_name">{{name}}</h2>
+                                    <p>
+                                        <span class="promo_store">{{store_name}}</span><span class="hidden_phone"> | </span>
+                                        <span class="promo_dates">{{dates}}</span>
+                                    </p>
+                                    <div class="promo_list_desc">{{description_short}}</div>
+                                    <a class="newsletter_btn animated_btn inside_btn" href="/events/{{slug}}">
+                                        View Event Details <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="secondary-locale">
+                            <div class="row promo_item">
+                                <div class="col-md-3">
+                                    <div class="cropped_image">
+                                        <img src="{{event_image2_url_abs}}" alt="{{name_2}}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="promo_list_name">{{name_2}}</h2>
+                                    <p>
+                                        <span class="promo_store">{{store_name}}</span><span class="hidden_phone"> | </span>
+                                        <span class="promo_dates">{{dates}}</span>
+                                    </p>
+                                    <div class="promo_list_desc">{{description_short_2}}</div>
+                                    <a class="newsletter_btn animated_btn inside_btn" href="/events/{{slug}}">
+                                        Afficher les détails de l’événement <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden_now" id="no_events">
+            <div class="col-md-12">
+                <p data-i18n="events.no_events"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll (){
+            var banner_repo = getRepoDetailsByName("Events Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var promotions = getEventsList().sortBy(function(o){ return o.end_date });
+            var published_promos = [];
+            $.each(promotions, function(key, val) {
+                today = moment();
+                webDate = moment(val.show_on_web_date);
+                if (today >= webDate) {
+                    published_promos.push(val);
+                } 
+            });
+            
+            if (published_promos.length > 0) {
+                renderEvents("#promos_container", "#promos_template", published_promos, "Westbrook Mall");
+            } else {
+                $('#no_events').show()
+            }
+            show_content();
+        }
+		loadMallDataCached(renderAll); 
+    })
+</script>
