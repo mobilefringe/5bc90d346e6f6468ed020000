@@ -205,8 +205,8 @@ function renderFeatureItems(){
     // var items = getFeatureList();
     var items = [];
     var images= ["//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614074000/470 X 940 2.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614081000/My-Donair-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614078000/Sport-Chek-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614078000/Sylvia's-Grill-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614077000/Kid's-Fun-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614077000/470 x 940.jpg","https://picsum.photos/470/940?image=1077"]
-    var urls = ["/newsletter", "/feature2_url", "/stores", "feature4_url", "/pages/westbrook-kids-fun", "/promotions", "feature7_url"];
-    var names = ["Newsletter", "feature 2", "Shops", "feature 4", "Kids Fun", "Promotions", "feature 7"];
+    var urls = ["/newsletter", "/feature2_url", "/stores", "/events", "/pages/westbrook-kids-fun", "/promotions", "feature7_url"];
+    var names = ["Newsletter", "feature 2", "Shops", "Events", "Kids Fun", "Promotions", "feature 7"];
     $.each(images, function(i, val){
         var item = {};
         item.name = names[i];
