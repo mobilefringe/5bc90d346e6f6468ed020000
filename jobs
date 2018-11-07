@@ -87,7 +87,7 @@
                 } 
             });
             if(published_jobs.length > 0){
-                renderJobs('#jobs_container', '#jobs_template', jobs, "Lambton Mall");
+                renderJobs('#jobs_container', '#jobs_template', jobs, "Westbrook Mall");
             } else {
                 $('#no_jobs').show()
             }
