@@ -204,7 +204,7 @@ function renderEventDetails(container, template, collection, mall_name){
 function renderFeatureItems(){
     // var items = getFeatureList();
     var items = [];
-    var images= ["//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614074000/470 X 940 2.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614081000/My-Donair-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614078000/Sport-Chek-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614078000/Sylvia's-Grill-470-x-470.jpg","https://picsum.photos/470?image=1074","https://picsum.photos/470?image=1076","https://picsum.photos/470/940?image=1077"]
+    var images= ["//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614074000/470 X 940 2.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614081000/My-Donair-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614078000/Sport-Chek-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614078000/Sylvia's-Grill-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614077000/Kid's-Fun-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614077000/470 x 940.jpg","https://picsum.photos/470/940?image=1077"]
     var urls = ["/feature1_url", "/feature2_url", "feature3_url", "feature4_url", "feature5_url", "feature6_url", "feature7_url"];
     var names = ["feature1", "feature", "featurel", "feature4", "feature5", "feature6", "feature7"];
     $.each(images, function(i, val){
