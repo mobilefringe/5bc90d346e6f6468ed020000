@@ -76,17 +76,13 @@
     <div class="feature_items_box mobile_padding">
         <div class="feature_row">
             <div class="feature_item">
-            
                 <div id="feature_0" class="position_relative"></div>
                 <div id="feature_1" class="position_relative"></div>
             </div>
-            
             <div class="feature_item">
-               
                 <div class="social_box twitter_box text-center" id="social_twitter">
                     <span class="hidden-sm hidden-xs">
                         <a href="#" id="latest_tweet_link" target="_blank"><p id="latest_tweet" class="latest_post"></p></a>
-                       
                         <p id="latest_tweet_date" class="latest_post"></p>
                         <p id="twitter_link">
                             <a  class="social_link_blank" href="https://twitter.com/WestbrookMall" target="_blank">@WestbrookMall</a>
@@ -119,9 +115,8 @@
             </div>
             
             <div class="feature_item">
-                <div id="feature_4" class="position_relative"></div>
+                <div id="feature_3" class="position_relative"></div>
                 <div class="social_box text-center" id="social_fb">
-                   
                     <span class="hidden-sm hidden-xs">
                         <a href="#" id="latest_fb_link" target="_blank">
                             <p id="latest_fb" class="latest_post"></p>
@@ -139,7 +134,6 @@
                 </div>
                 <div id="feature_5" class="position_relative"></div>
             </div>
-            
             <div class="feature_item">
                 <div class="social">
                     <a href="/hours" class="social_box text-center hours_box" id="hours_box">
