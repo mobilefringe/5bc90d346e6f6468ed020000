@@ -46,19 +46,10 @@
         <ul class="slides" id="home_banner">
             <li class="position_relative">
                 <a href="/stores" {{css}}>
-                    <div class="hero_banner" style="background-image: url('https://picsum.photos/1920/540?image=770')"></div>
+                    <div class="hero_banner" style="background-image: url('//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/jpeg/1541614076000/Winter-Web NEW 1920 x 540.jpg')"></div>
                 </a>
             </li>
-            <li class="position_relative">
-                <a href="/stores" {{css}}>
-                    <div class="hero_banner" style="background-image: url('https://picsum.photos/1920/540?image=773')"></div>
-                </a>
-            </li>
-            <li class="position_relative">
-                <a href="/stores" {{css}}>
-                    <div class="hero_banner" style="background-image: url('https://picsum.photos/1920/540?image=774')"></div>
-                </a>
-            </li>
+          
         </ul>
     </div>
     <div class="banner_text" id="welcome_msg_container">
