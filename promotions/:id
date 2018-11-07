@@ -93,7 +93,7 @@
             var pathArray = window.location.pathname.split( '/' );
             var slug = pathArray[pathArray.length-1];
             promo_details = getPromotionDetailsBySlug(slug);
-            renderPromoDetails('#promo_details_container', '#promo_details_template', promo_details, "Lambton Mall")
+            renderPromoDetails('#promo_details_container', '#promo_details_template', promo_details, "Westbrook Mall")
             show_content();
         }
         loadMallDataCached(renderAll); 
