@@ -220,7 +220,7 @@
     <section class="content_container main_container">
         <div class="newsletter_container text-center">
             <h3 class="heading" data-i18n="footer.newsletter_title"></h3>
-            <p class="newsletter_desc" data-i18n="footer.newsletter_tagline"></p>
+            
             <a href="/newsletter" class="newsletter_btn animated_btn" data-i18n="footer.newsletter_submit"></a>
         </div>
         <div class="site_map">
