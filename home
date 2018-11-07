@@ -96,7 +96,7 @@
                 </div>
                 <div id="feature_2" class="position_relative"></div>
                 <!--<div id="feature_3" class="position_relative"></div>-->
-                <div class="social_box insta_box text-centerhours_box" id="hours_box">
+                <div class="social_box insta_box text-center hours_box" id="hours_box">
                     <!--<span class="hidden-sm hidden-xs">-->
                     <!--    <a href="#" id="latest_tweet_link" target="_blank"><p id="latest_tweet" class="latest_post"></p></a>-->
                        
