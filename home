@@ -78,11 +78,7 @@
                         </a>        
                     </div>
                     </span>
-                    <span class="visible-sm-block visible-xs-block">
-                        <a href="https://twitter.com/WestbrookMall" target="_blank">
-                            <h5 id="twitter_mobile" class="insta">FOLLOW US @WestbrookMall</h5>
-                        </a>        
-                    </span>
+                   
                 </div>
                 <div id="feature_2" class="position_relative"></div>
                 <!--<div id="feature_3" class="position_relative"></div>-->
