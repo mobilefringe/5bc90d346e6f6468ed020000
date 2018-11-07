@@ -137,7 +137,6 @@
             <div class="feature_item">
                 <div class="social">
                     <a href="/hours" class="social_box text-center hours_box" id="hours_box">
-                       
                         <span class="hidden-sm hidden-xs">
                             <div id="home_hours_container2" class="home_feature_hours">
                                 <script id="home_hours_template2" type="x-tmpl-mustache/text">
@@ -152,7 +151,7 @@
                         </span>
                     </a>
                 </div>
-                <div id="feature_6" class="position_relative"></div>
+                <div id="feature_5" class="position_relative"></div>
             </div>
             <div class="clearfix"></div>
         </div>
