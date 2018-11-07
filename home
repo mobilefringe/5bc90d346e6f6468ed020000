@@ -72,11 +72,11 @@
             </div>
             <div class="feature_item">
                 <div class="social_box twitter_box text-center" id="social_twitter">
-                    <span class="hidden-sm hidden-xs">
-                       <a href="https://twitter.com/WestbrookMall" target="_blank">
-                            <h5 id="twitter_mobile" class="insta">FOLLOW US @WestbrookMall</h5>
-                        </a> 
-                        </p>
+                    div class="feature_insta_conatiner">
+                        <a href="https://www.instagram.com/westbrookmall" target="_blank">
+                            <h5 id="twitter_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
+                        </a>        
+                    </div>
                     </span>
                     <span class="visible-sm-block visible-xs-block">
                         <a href="https://twitter.com/WestbrookMall" target="_blank">
