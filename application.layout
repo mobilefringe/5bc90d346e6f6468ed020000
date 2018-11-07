@@ -212,7 +212,7 @@
             <div class="hedaer_divider"></div>
         </section>
     </div>
-    <h1 class="accessibility">Lambton Mall</h1>
+    <h1 class="accessibility">Westbrook Mall</h1>
     <section class="yield">
         {{yield}}
     </section>
@@ -279,7 +279,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h3 class="site_map_heading">&copy; <span id="current_year"></span> - Lambton Mall</h3>
+                    <h3 class="site_map_heading">&copy; <span id="current_year"></span> - Westbrook Mall</h3>
                     <p class="rights_reserved">
                         <a href="https://www.google.com/maps/place/Westbrook+Mall/@51.0422635,-114.1422347,17z/data=!3m1!4b1!4m5!3m4!1s0x53716e309b084c4f:0x4bf73618e4160580!8m2!3d51.0422635!4d-114.140046" target="_blank">
                            1200 37 St SW <br> 
