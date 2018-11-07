@@ -99,7 +99,7 @@
                 <div class="social_box insta_box text-center" id="insta_box">
                     <div class="feature_insta_conatiner">
                         <a href="https://www.instagram.com/westbrookmall" target="_blank">
-                            <h5 id="twitter_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
+                            <h5 class="insta">FOLLOW US<br>@WestbrookMall</h5>
                         </a>        
                     </div>
                 </div>
