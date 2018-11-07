@@ -82,7 +82,7 @@
     $(document).ready(function(e){
         init(e);
         function renderAll(){
-            var banner_repo = getRepoDetailsByName("Deals Banner");
+            var banner_repo = getRepoDetailsByName("Promotion Banner");
             if (banner_repo) {
                 var banner_image = banner_repo.images[0].image_url;
                 if (banner_image) {
