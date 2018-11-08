@@ -100,7 +100,7 @@
 	"hours": {
 	    "title": "Shopping Hours",
 	    "regular_hours": "Regular Hours",
-	    "reduced_hours": "Reduced Hours of Operation",
+	    "reduced_hours": "Holiday Hours of Operation",
 	    "closed_hours": "Holiday Closures"
 	},
     "directions": {
