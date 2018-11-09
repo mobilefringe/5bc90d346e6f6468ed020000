@@ -157,7 +157,7 @@
                 
                 if (banner_image) {
                     console.log("banner_image", banner_image)
-                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                   console.log( $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" }));
                 }
             }
                 
