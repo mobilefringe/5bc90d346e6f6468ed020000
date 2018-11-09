@@ -160,7 +160,7 @@
                 <!--        window._gaq = {}; window._gat = {};-->
                 <!--        window._gat._getTracker = window._gat._getTrackerByName = function(){ return {-->
                 <!--          _trackEvent: function(eventCategory, eventAction, eventLabel) {-->
-                            // [0] will send the event to the first analytics ID on the page (in case you have multiple)
+                            <!--// [0] will send the event to the first analytics ID on the page (in case you have multiple)-->
                 <!--            if (window.ga && ga.getAll()[0]) {-->
                 <!--              ga.getAll()[0].send('event', eventCategory, eventAction, eventLabel);-->
                 <!--              window.console && console.log('Translation event sent to Google Analytics:', eventCategory, eventAction, eventLabel);-->
