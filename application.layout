@@ -342,7 +342,9 @@
                             <img src="//codecloud.cdn.speedyrails.net/sites/59c3f9f46e6f646526050000/image/png/1509381758000/CW Logos-_CW_Colorlogo.png" class="management_logo" alt="Cushman & Wakefield Logo">
                         </a>
                     </p>
-                    
+                    <p class="rights_reserved">
+                        <span data-i18n="footer.power"></span> <a href="//mallmaverick.com" target="_blank">Mall Maverick</a>
+                    </p>
                 </div>
             </div>
         </div>
