@@ -143,11 +143,11 @@
                 <div class="google_translate_container">
                     <div id="google_translate_element_m"></div>
                 </div>
-                <div id="google_translate_element"></div>
-                    <script type="text/javascript">
-                        function googleTranslateElementInit() {
-                          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,zh-CN,zh-TW,es,tl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-40014802-41'}, 'google_translate_element');
-                        }
+                <!--<div id="google_translate_element"></div>-->
+                <!--    <script type="text/javascript">-->
+                <!--        function googleTranslateElementInit() {-->
+                <!--          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,zh-CN,zh-TW,es,tl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-40014802-41'}, 'google_translate_element');-->
+                <!--        }-->
                         /*!
                          * Capture Analytics for Google Translate
                          * As of 2016, the Google Translate toolbar still only works with the old-style analytics (ga.js)
@@ -157,20 +157,20 @@
                          * Copyright (c) Simon East 2016, for yump.com.au
                          * Free to use under MIT licence <https://opensource.org/licenses/MIT>
                          */
-                        window._gaq = {}; window._gat = {};
-                        window._gat._getTracker = window._gat._getTrackerByName = function(){ return {
-                          _trackEvent: function(eventCategory, eventAction, eventLabel) {
+                <!--        window._gaq = {}; window._gat = {};-->
+                <!--        window._gat._getTracker = window._gat._getTrackerByName = function(){ return {-->
+                <!--          _trackEvent: function(eventCategory, eventAction, eventLabel) {-->
                             // [0] will send the event to the first analytics ID on the page (in case you have multiple)
-                            if (window.ga && ga.getAll()[0]) {
-                              ga.getAll()[0].send('event', eventCategory, eventAction, eventLabel);
-                              window.console && console.log('Translation event sent to Google Analytics:', eventCategory, eventAction, eventLabel);
-                            } else {
-                              window.console && console.warn('Could not locate Google Analytics when attempting to log translation events.')
-                            }
-                          }
-                        }}
-                    </script>
-                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <!--            if (window.ga && ga.getAll()[0]) {-->
+                <!--              ga.getAll()[0].send('event', eventCategory, eventAction, eventLabel);-->
+                <!--              window.console && console.log('Translation event sent to Google Analytics:', eventCategory, eventAction, eventLabel);-->
+                <!--            } else {-->
+                <!--              window.console && console.warn('Could not locate Google Analytics when attempting to log translation events.')-->
+                <!--            }-->
+                <!--          }-->
+                <!--        }}-->
+                <!--    </script>-->
+                <!--    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
                     
                     <div class="language_toggle_mobile hide">
       					<a href="?locale=en" id="set_lang_en_m">EN</a> |
