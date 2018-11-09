@@ -148,15 +148,15 @@
                 <!--        function googleTranslateElementInit() {-->
                 <!--          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,zh-CN,zh-TW,es,tl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-40014802-41'}, 'google_translate_element');-->
                 <!--        }-->
-                        /*!
-                         * Capture Analytics for Google Translate
-                         * As of 2016, the Google Translate toolbar still only works with the old-style analytics (ga.js)
-                         * The code below mocks the old analytics object, captures the events and passes them to the new Universal Analytics (analytics.js)
-                         *
-                         * Source: http://webmasters.stackexchange.com/a/101787/18749
-                         * Copyright (c) Simon East 2016, for yump.com.au
-                         * Free to use under MIT licence <https://opensource.org/licenses/MIT>
-                         */
+                        <!--/*!-->
+                        <!-- * Capture Analytics for Google Translate-->
+                        <!-- * As of 2016, the Google Translate toolbar still only works with the old-style analytics (ga.js)-->
+                        <!-- * The code below mocks the old analytics object, captures the events and passes them to the new Universal Analytics (analytics.js)-->
+                        <!-- *-->
+                        <!-- * Source: http://webmasters.stackexchange.com/a/101787/18749-->
+                        <!-- * Copyright (c) Simon East 2016, for yump.com.au-->
+                        <!-- * Free to use under MIT licence <https://opensource.org/licenses/MIT>-->
+                        <!-- */-->
                 <!--        window._gaq = {}; window._gat = {};-->
                 <!--        window._gat._getTracker = window._gat._getTrackerByName = function(){ return {-->
                 <!--          _trackEvent: function(eventCategory, eventAction, eventLabel) {-->
