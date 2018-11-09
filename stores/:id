@@ -154,6 +154,7 @@
             var banner_repo = getRepoDetailsByName("Directory Banner").images;
             if (banner_repo) {
                 var banner_image = banner_repo[0].image_url;
+                console.oog("banner_image", banner_image)
                 if (banner_image) {
                     $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
                 }
