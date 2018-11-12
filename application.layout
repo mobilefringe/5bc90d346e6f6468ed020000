@@ -15,7 +15,15 @@
     <meta name="author" content="">
     
     <title>{{meta_title}}</title>
-
+   <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-40014802-41', 'auto');
+        ga('send', 'pageview');
+    </script>
     <!-- FAVICON -->
     <link rel="icon" href="//codecloud.cdn.speedyrails.net/sites/5bc90d346e6f6468ed020000/image/png/1541719124000/favicon-32x32.png">
 
