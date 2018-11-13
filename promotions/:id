@@ -23,8 +23,8 @@
                         <p class="promo_dates">{{dates}}</p>
                         <p class="show_phone">
                             <span class="promo_store ">{{store_name}} </span>
-                            <span class="hidden_phone">|</span> 
-                            <a href="/stores/{{store_slug}}"  class="read_more newsletter_btn animated_btn" style="{{show_store}}">View Store Details</a>
+                            <span class="hidden_phone">|</span>
+                            <a href="/stores/{{store_slug}}" class="read_more newsletter_btn animated_btn" style="{{show_store}}">View Store Details</a>
                         </p>
                         <div class="details_desc">{{{rich_description}}}</div>
                     </div>
