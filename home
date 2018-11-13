@@ -89,12 +89,12 @@
                 <div id="feature_2" class="position_relative"></div>
                 <!--<div id="feature_3" class="position_relative"></div>-->
                 <div class="social_box insta_box text-center" id="insta_box">
-                <span class="hidden-sm hidden-xs">
-                    <div class="feature_insta_conatiner">
-                        <a href="https://www.instagram.com/westbrookmall" target="_blank">
-                            <h5 id="insta_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
-                        </a>        
-                    </div>
+                    <span class="hidden-sm hidden-xs">
+                        <div class="feature_insta_conatiner">
+                            <a href="https://www.instagram.com/westbrookmall" target="_blank">
+                                <h5 id="insta_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
+                            </a>        
+                        </div>
                     </span>
                     <span class="visible-sm-block visible-xs-block">
                         <a href="https://www.instagram.com/westbrookmall" target="_blank">
