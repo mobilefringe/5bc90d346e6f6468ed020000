@@ -247,7 +247,7 @@ function renderHomeHours(container, template, collection){
             val.day = day;
         }
         else if(!val.day && val.is_holiday){
-            console.log("its a holiday");
+            
             var day = moment(val.holiday_date).format('ddd');
             val.day = day;
         }
