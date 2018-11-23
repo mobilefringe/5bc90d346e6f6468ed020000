@@ -242,7 +242,7 @@ function renderHomeHours(container, template, collection){
     Mustache.parse(template_html);   // optional, speeds up future uses
     item_list.push(collection);    
     $.each( item_list , function( key, val ) {
-        console.log("val", val)
+        console.log("val", val, moment(val.day_of_week))
         if(val.day_of_week){
             var day = moment(val.day_of_week).format("ddd");//getDay(val.day_of_week);
             val.day = day;
