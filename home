@@ -202,6 +202,8 @@
                 $('#latest_tweet').text(latest_tweet.text)
             }
             $('#latest_tweet_link').attr('href', latest_tweet.link)
+            var tweet_date = new Date(latest_tweet.created_at.split(',')[0])
+        $('#latest_tweet_date').text(moment(fb_date).format("MMM DD"))
         }
         
         
