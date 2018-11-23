@@ -195,7 +195,7 @@
         var latest_tweet = social_feed.twitter[0]
         var latest_fb_post = social_feed.facebook[0]
         if(latest_tweet && latest_tweet.text){
-            if(latest_tweet && latest_tweet.text.length > 100){
+            if(latest_tweet.text.length > 100){
                 $('#latest_tweet').text(latest_tweet.text.substr(0,100) + "...")
             }
             else{
