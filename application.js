@@ -243,7 +243,7 @@ function renderHomeHours(container, template, collection){
     item_list.push(collection);    
     $.each( item_list , function( key, val ) {
         if(val.day_of_week){
-            var day = moment(val.day_of_week).format('ddd');//getDay(val.day_of_week);
+            var day =  moment(val.day_of_week).format("ddd");//getDay(val.day_of_week);
             val.day = day;
         }
         else if(!val.day && val.is_holiday){
