@@ -158,7 +158,7 @@
             var property = [getPropertyDetails()];
             renderGeneral('#welcome_msg_container','#welcome_msg_template',property);
             
-            loadSocialFeeds(render_social)
+            // loadSocialFeeds(render_social)
             renderFeatureItems();
             var today_hours = getTodaysHours();
             renderHomeHours('#home_hours_container2', '#home_hours_template2', today_hours);
