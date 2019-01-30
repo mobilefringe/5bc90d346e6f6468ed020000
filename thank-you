@@ -1,0 +1,29 @@
+<div class="inside_banner text-center">
+    <h2 data-i18n="newsletter.title">Newsletter</h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding">
+    <div class="margin_30"></div>
+    <h2  data-i18n="newsletter.thank_you"></h2>
+    <p data-i18n="newsletter.message"></p>
+    <div class="margin_30"></div>
+</div>
+<script>
+$(document).ready(function(e){
+    init(e);
+    function renderAll(){
+        var banner_repo = getRepoDetailsByName("Newsletter Banner");
+        if (banner_repo) {
+            var banner_image = banner_repo.images[0].image_url;
+            if (banner_image) {
+                $(".inside_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+            }
+        }
+        
+        show_content();
+    }
+    
+    loadMallDataCached(renderAll); 
+});
+</script>
