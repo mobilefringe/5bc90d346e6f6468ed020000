@@ -70,7 +70,7 @@
     <h5 class="text-center tap_here show_phone">
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
-            <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
+            <option value="" disabled selected>Tap For More Options</option>
             <option value="/hours" data-i18n="inside_page.hours"></option>
             <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
             <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
