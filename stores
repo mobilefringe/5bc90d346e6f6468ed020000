@@ -1,0 +1,181 @@
+<div class="main_banner text-center">
+    <h2>Stores</h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-6">
+            <h5 class="active_heading">Stores</h5>
+        </div>
+        <div class="col-md-6">
+            <h5><a href="/map" data-i18n="inside_page.map"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
+            <option value="/map" data-i18n="inside_page.map"></option>
+        </select>
+    </h5>
+</div>
+<div class="store_category_selector show_phone" >
+    <h5 class="text-center tap_here">SELECT CATEGORY
+    </h5>
+</div>
+<div class="hidden_now margin_25_across" id="category_selector_container">
+    <script id="category_selector_template" type="x-tmpl-mustache/text">
+        <p class="mobile_cat" cat_id="{{id}}">{{name}}</p>
+    </script>
+</div>
+<div class="padded_border"></div>
+<div class="content_container main_container position_relative">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-8">
+                <h5 class="category_header" style="display:none" id="cat_name_header">All</h5>
+                <div class="row main_row">
+                    <div class="col-md-6">
+                        <div class="" id="store_list_container"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="" id="store_list_container2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 hidden_phone">
+                <div id="new_stores">
+                    <p class="category_header" data-i18n="stores.new_stores"></p>
+                    <div id="new_store_container">
+                        <script id="new_store_template" type="x-tmpl-mustache/text">
+                            <h5 class="category_name"><a href="/stores/{{slug}}">{{name}}</a></h5>  
+                        </script>
+                    </div>
+                </div>
+                <div id="coming_soon_stores">
+                    <p class="category_header" data-i18n="stores.coming_soon"></p>
+                    <div id="coming_soon_container">
+                        <script id="coming_soon_template" type="x-tmpl-mustache/text">
+                            <h5 class="category_name"><a href="/stores/{{slug}}">{{name}}</a></h5>    
+                        </script>
+                    </div>
+                </div>
+                <p class="category_header" data-i18n="stores.category"></p>
+                <h5 class="category_name active_cat hidden_phone"><a href="#" class="show_all_stores" data-i18n="stores.categories_all"></a></h5>
+                <div id="category_container" class="hidden_phone">
+                    <script id="category_template" type="x-tmpl-mustache/text">
+                        <h5 class="category_name"><a href="#" class="show_cat_stores" data-id="{{id}}">{{cat_name}}</a></h5>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="store_list_template" type="x-tmpl-mustache/text">
+    <div class="store_list_content cats_row" data-cat="{{cat_list}}">
+        <p class="store_initial" style="{{show}}" id="{{initial}}">{{initial}}</p>
+        <p class="store_name"><a href="/stores/{{slug}}">{{name}}</a></p>
+    </div>
+</script>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll (){
+            var banner_repo = getRepoDetailsByName("Directory Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var stores = getStoresList(); 
+            renderStoreList('#store_list_container','#store_list_template', stores, "A", "L");
+            renderStoreList('#store_list_container2','#store_list_template', stores, "M", "Z");
+            renderStoreList('#store_list_container_map','#store_list_template_map', stores, "A", "Z");
+            
+            var categories = getStoreCategories();
+            var category_list = [];
+            $.each( categories, function( key, val ){
+                if (val.store_ids != null) {
+                    category_list.push(val);
+                } 
+            });
+            renderCategoryList('#category_container', '#category_template', category_list);
+            var mobile_cat_list = category_list;
+            var all_cat = {};
+            all_cat.name = "All Categories";
+            all_cat.id= 0;
+            mobile_cat_list.unshift(all_cat);
+            renderGeneral('#category_selector_container', '#category_selector_template', mobile_cat_list);
+            
+            $(".store_category_selector").click(function(e){
+                $("#category_selector_container").slideToggle();
+                $(".padded_border").toggle()
+            })
+            $(".mobile_cat").click(function(e){
+                cat_id = $(this).attr('cat_id');
+                show_mobile_cat_stores(cat_id, $(this));
+                 $("#category_selector_container").slideToggle();
+                 $(".padded_border").toggle()
+            })
+            
+            show_cat_stores();
+            
+            var new_stores = getNewStoresList();
+            if (new_stores.length > 0){
+                renderGeneral("#new_store_container","#new_store_template", new_stores);
+            } else {
+                $('#new_stores').hide();
+            }
+            
+            var coming_soon_stores = getComingSoonList();
+            if (coming_soon_stores.length > 0){
+                renderGeneral("#coming_soon_container","#coming_soon_template", coming_soon_stores);
+            } else {
+                $('#coming_soon_stores').hide();
+            }
+            
+            show_content();
+        }
+        
+		loadMallDataCached(renderAll); 
+    })
+    function show_mobile_cat_stores(cat_id, el){
+        if(cat_id == 0){
+            $('.main_row .col-md-6').removeClass('full_width')
+            $('#no_promo_in_category').hide();
+            $('.active_cat').removeClass('active_cat');
+            el.addClass('active_cat');
+            var rows = $('.cats_row');
+            rows.show();
+            $.each($('.store_initial'), function(i, val){
+               if ($(val).text().length > 0){
+                   $(val).show();
+               } 
+            });
+            $('#cat_name_header').hide();
+        } else {
+            $('.main_row .col-md-6').addClass('full_width')
+            var visible_row = 0
+            $('.active_cat').removeClass('active_cat');
+            el.addClass('active_cat');
+            var rows = $('.cats_row');
+            rows.hide();
+            $('#no_promo_in_category').hide();
+            $('.store_initial').hide();
+            $('#cat_name_header').text(el.text());
+            $('#cat_name_header').css('display', 'block');
+            $.each(rows, function(i, val){
+                var cat_array = val.getAttribute('data-cat').split(',');
+                if ($.inArray(cat_id, cat_array) >= 0){
+                    $(val).show();
+                    visible_row++;
+                }
+            });
+            if(visible_row == 0){
+                $('#no_promo_in_category').show();
+            }
+        }
+    }
+</script>
