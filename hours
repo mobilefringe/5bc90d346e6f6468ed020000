@@ -1,0 +1,88 @@
+<div class="main_banner text-center">
+    <h2 data-i18n="hours.title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5 class="active_heading" data-i18n="inside_page.hours"></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
+            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
+            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+        </select>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-6"> 
+                <h3 class="hours_heading" data-i18n="hours.regular_hours"></h3>
+                <div id="hours_container" class="hours_container">
+                    <script id="hours_template" type="x-tmpl-mustache/text">
+                        <div class="hours_div">
+                            <span>{{day}}:</span>
+                            <span>{{h}}</span>
+                        </div>
+                    </script>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3 class="hours_heading" data-i18n="hours.reduced_hours"></h3>
+                <div id="holidays_hours_container" class="hours_container">
+                    <script id="holidays_hours_template" type="x-tmpl-mustache/text">
+                        <div class="hours_div">
+                            <span class="mobile_holiday_name">{{holiday_name}} ({{formatted_date}})</span>
+                            <span>{{h}}</span>
+                        </div>
+                    </script>
+                </div>
+                <h3 class="hours_heading" data-i18n="hours.closed_hours"></h3>
+                <div id="closed_hours_container" class="hours_container">
+                    <script id="closed_hours_template" type="x-tmpl-mustache/text">
+                        <div class="hours_div">
+                            <span>{{holiday_name}} ({{formatted_date}})</span>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("Hours Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var hours = getPropertyRegularHours().sortBy(function(o){ return o.day_of_week });;
+            renderHours('#hours_container','#hours_template', hours, 'reg_hours');
+            var holiday_hours = getPropertyHolidayHours().sortBy(function(o){ return o.holiday_date });
+            renderHours('#holidays_hours_container','#holidays_hours_template', holiday_hours, 'holiday_hours');
+            renderHours('#closed_hours_container','#closed_hours_template', holiday_hours, 'closed_hours');
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
