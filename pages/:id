@@ -1,0 +1,137 @@
+<div class="inside_banner text-center">
+    <h2 id="mm_page_title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container hidden_now" id="act_green">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
+        </div>
+         <div class="col-md-3">
+            <h5 class="active_heading" data-i18n="inside_page.act_green"></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/hours" data-i18n="inside_page.hours"></option>
+            <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
+            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
+        </select>
+    </h5>
+</div>
+<div class="store_list_head main_container hidden_now" id="security">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5  class="active_heading" data-i18n="inside_page.security"></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/hours" data-i18n="inside_page.hours"></option>
+            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
+            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+        </select>
+    </h5>
+</div>
+<div class="store_list_head main_container hidden_now" id="accessibility">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5 class="active_heading" data-i18n="inside_page.accessibility"></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
+            <option value="/hours" data-i18n="inside_page.hours"></option>
+            <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
+            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+        </select>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding pages_text">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="mm_page_content"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("Pages Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".inside_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var pathArray = window.location.pathname.split( '/' );
+            var slug = pathArray[pathArray.length-1];
+            prefix = get_prefix();
+            var pages_json = prefix + "/pages/" + slug + ".json"
+            $.getJSON(pages_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    $('#mm_page_title').html(data.title.toUpperCase());
+                    $('#mm_page_content').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#mm_page_title').html(data.title_2.toUpperCase());
+                    $('#mm_page_content').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                    $("#404_msg").fadeIn("fast");
+                }
+            }); 
+            
+            // check if top header should be shown 
+            if(slug == 'westbrook-act-green-initiatives'){
+                $("#act_green").show();
+                
+            }
+            else if (slug == 'westbrook-security'){
+                $("#security").show();
+                
+            }
+            else if (slug == 'westbrook-accessability'){
+                $("#accessibility").show();
+                
+            }
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
