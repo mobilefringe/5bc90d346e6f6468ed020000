@@ -1,0 +1,126 @@
+<div class="main_banner text-center">
+    <h2 data-i18n="inside_page.services"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5 class="active_heading" data-i18n="inside_page.mall_info"></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/leasing" data-i18n="inside_page.leasing"></a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/jobs" data-i18n="inside_page.careers"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/mall_info" data-i18n="inside_page.mall_info"></option>
+            <option value="/leasing" data-i18n="inside_page.leasing"></option>
+            <option value="/jobs" data-i18n="inside_page.careers"></option>
+        </select>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding mall_info_container">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="mm_page_title"></h1>
+                <div id="mm_page_content"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="mm_page_title_2"></h1>
+                <div id="mm_page_content_2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="mm_page_title_3"  data-i18n="inside_page.mall_photos"></h1>
+                <div class="flexslider">
+                    <ul class="slides" id="lookbook_slider">
+                        <script id="lookbook_slider_template" type="x-tmpl-mustache/text">
+                            <li>
+                                <img src="{{image_url}}" alt="Lookbook Image" class ="gallery_image"/>
+                                <div class="lookbook_container"> 
+                                    {{#name}}
+                                    <h1 class="lookbook_header">{{name}}</h1>
+                                    <p class="lookbook_description">{{description}}</p>
+                                    {{/name}}
+                                </div>
+                            </li>
+                        </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("Mall Info Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var prefix = get_prefix();
+            //get guest services json
+            var g_pages_json = prefix + "/pages/westbrook-contact-us.json"
+            $.getJSON(g_pages_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    
+                    $('#mm_page_title').text(data.title);
+                    $('#mm_page_content').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#mm_page_title').text(data.title_2);
+                    $('#mm_page_content').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                   console.log("Error loading ", g_pages_json);
+                }
+            }); 
+            //get accessibility json
+            var a_pages_json = prefix + "/pages/westbrook-security.json"
+            $.getJSON(a_pages_json).done(function(data) {
+                if(Cookies.get('current_locale') == "en-CA"){
+                    $('#mm_page_title_2').text(data.title);
+                    $('#mm_page_content_2').html(data.body);
+                }
+                if(Cookies.get('current_locale') == "fr-CA"){
+                    $('#mm_page_title_2').text(data.title_2);
+                    $('#mm_page_content_2').html(data.body_2);
+                }
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                   console.log("Error loading ", a_pages_json);
+                }
+            }); 
+            // get mall gallery images
+           var lookbook_images = getRepoDetailsByName("mall-photos").images;
+            renderGeneral("#lookbook_slider", "#lookbook_slider_template", lookbook_images);
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
+            $(".flex-prev").html("");
+            $(".flex-next").html("");
+            
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
