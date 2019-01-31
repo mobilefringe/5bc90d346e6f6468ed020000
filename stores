@@ -8,14 +8,14 @@
             <h5 class="active_heading">Stores</h5>
         </div>
         <div class="col-md-6">
-            <h5><a href="/map" data-i18n="inside_page.map"></a></h5>
+            <h5><a href="/map">Shopping Map</a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected data-i18n="inside_page.mobile_menu"></option>
-            <option value="/map" data-i18n="inside_page.map"></option>
+            <option value="/map">Shopping Map</option>
         </select>
     </h5>
 </div>
