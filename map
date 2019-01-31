@@ -1,0 +1,226 @@
+<div class="main_banner text-center">
+    <h2 data-i18n="map.title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-6">
+            <h5><a href="/stores" data-i18n="inside_page.stores"></a></h5>
+        </div>
+        <div class="col-md-6">
+            <h5 class="active_heading" data-i18n="inside_page.map"></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/stores" data-i18n="inside_page.stores"></option>
+        </select>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-4 hidden_phone">
+                <a id="store_scroll_up" href="#" class="store_list_navigation" data-i18n="map.scroll_up"></a>
+                <a id="store_scroll_down" href="#" class="store_list_navigation" data-i18n="map.scroll_down"></a>
+                <p class="category_header" data-i18n="map.find_store"></p>
+                <div id="stores_container">
+                    <script id="stores_template" type="x-tmpl-mustache/text">
+                        <h5 class="category_name"><a class="map_pin_a" href="#" store_id="{{id}}" store_name="{{name}}" store_x_coordinate="{{x_coordinate}}" store_y_coordinate="{{y_coordinate}}" data-svg="{{svgmap_region}}">{{name}}</a></h5>
+                    </script>
+                </div>
+            </div> 
+            <div class="col-md-8">
+                <div class="map_mobile_selection">
+                    <label class="accessibility" for="store_mobile_conatiner" data-i18n="map.select"></label>
+                    <select id="store_mobile_conatiner">
+                        <script id="store_mobile_template" type="x-tmpl-mustache/text">
+                            <option store_id="{{id}}" store_name="{{name}}" x_coordinate="{{x_coordinate}}" y_coordinate="{{y_coordinate}}">{{name}}</option>    
+                        </script>
+                    </select>
+                </div>
+                <div class="map-container">
+                    <div id="mapplic" class="mapplic"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script src="//codecloud.cdn.speedyrails.net/sites/5ae8c1fe6e6f6473fd160000/text/javascript/1520366143656/mapplic_mmsdk.js"></script>
+<script src="//codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/javascript/1484859750000/hammer.min.js"></script>
+
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderPageData(){
+            var banner_repo = getRepoDetailsByName("Map Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var stores = getStoresList();
+            renderStoreList('#stores_container','#stores_template', stores, "A", "Z");
+            renderStoreList('#store_mobile_conatiner','#store_mobile_template', stores, "A", "Z");
+            
+            $("#store_mobile_conatiner").prepend('<option value="" disabled selected data-i18n="map.select"></option>')
+    
+            var mall_json = {};
+            var landmarks = {};
+            mall_json.mapwidth = "800";
+            mall_json.mapheight = "852";
+            mall_json.categories = [];
+            mall_json.levels = [];
+            
+            // need to add the following for each floor we want to configure.
+            _.forEach(floorList(), function(value, key) { 
+                var floor_1 = {};
+                floor_1.id = value.id;
+                floor_1.title = value.title;
+                floor_1.map = value.map;
+                floor_1.show = value.show;
+                floor_1.locations = [];
+                // var stores_on_floors =  _.filter(stores, function(o) {return value.z_index === o.z_coordinate;}); 
+                var stores_on_floors= [];
+                if( value.z_index === 0) {
+                    stores_on_floors = stores;
+                } else {
+                    stores_on_floors = _.filter(stores, function(o) { if(o.z_coordinate == null) {return true;} else { return value.z_index === o.z_coordinate; }});
+                }
+                _.forEach(stores_on_floors, function(val, key) {
+                    //for testing limiting the store numbers to vm
+                    var temp_val = {};
+                    temp_val.id = val.id;
+                    temp_val.title = val.name;
+                    temp_val.about = val.description.substring(0,200);
+                    if(val.categories != null) {
+                        if(val.categories.length > 1){
+                        temp_val.category = val.categories[1];
+                        } else {
+                            temp_val.category = val.categories[0];
+                        }
+                    }
+                    temp_val.zoom = 2;
+                    temp_val.link = "/stores/" + val.slug;
+                    temp_val.pin = "hidden";
+                   
+                    //get svg's wifth/height by checking the map
+                    var svg_width = 800;
+                    var svg_height = 852;
+
+                    if(val.x_coordinate) {
+                        temp_val.x = val.x_coordinate / svg_width;
+                    }
+                    else {
+                        temp_val.x = 0.5;
+                    }
+                    if(val.y_coordinate) {
+                        temp_val.y = val.y_coordinate / svg_height;
+                    }
+                    else {
+                        temp_val.y = 0.5;
+                    }
+                    floor_1.locations.push(temp_val);
+                });
+                mall_json.levels.push(floor_1);
+            });
+            
+            map = $('#mapplic').mapplic({
+            	source: mall_json,
+            	height: 432,
+            	landmark : true,
+            	mapfill:true,
+            	minimap: false,
+            	sidebar: false,
+            	hovertip: true,
+            	developer: false,
+            	fullscreen : false,
+            	clearbutton: false,
+            	deeplinking: false,
+            	fillcolor : "none",
+            	maxscale: 5,
+            	skin: 'mapplic-dark',
+            	tooltiplabel : 'View Store Details'
+            });
+            
+            map.on('mapready', function(e, self) {
+				console.log('Map is ready!');
+				// mapLoaded(map);
+				$('.map_pin_a').click(function(e){
+                    e.preventDefault();
+                    var svgmap_region = $(this).attr('store_id');
+                    dropPin(svgmap_region);
+                });
+                
+                $("#store_mobile_conatiner").bind("change", function(e) {
+                    e.preventDefault()
+                    var selectedOption = $("#store_mobile_conatiner option:selected")
+                    selectedOption = selectedOption[0]
+                    var svgmap_region = $(selectedOption).attr('store_id');
+                    dropPin(svgmap_region);
+                });
+            
+                show_content();
+			});
+        }
+
+        // function mapLoaded (map) {
+        //     self = map.data('mapplic');
+        //     var svg = document.getElementById('Layer_1');
+            
+            //get floors to be visible 
+            // $(".mapplic-layer").show();
+            //go through all the regions and recalculate the locations
+            // _.forEach(svgList(), function(val, key) {
+            //     if(val != null) {
+            //         try {
+            //             var element = document.getElementById(val);
+            //             if (element){
+            //                 elBBox = element.getBoundingClientRect();
+            //                 var viewport_center_x = 0;
+            //                 var viewport_center_y = 0;
+            //                 viewport_center_x = (_.toNumber(elBBox.left) + _.toNumber(elBBox.right) )/2;
+            //                 viewport_center_y = (_.toNumber(elBBox.top) + _.toNumber(elBBox.bottom) )/2;
+            //                 pt = svg.createSVGPoint();
+            //                 pt.x = viewport_center_x;
+            //                 pt.y = viewport_center_y;
+            //                 var svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+            //                 var new_x = svgP.x/ 2500;
+            //                 var new_y = svgP.y/ 2500;
+            //                 var location = self.getLocationData(val);
+            //                 if(location !== null && location.el){
+            //                     location.x = new_x;
+            //                     location.y =  new_y;
+            //                     self.updateLocation(val);
+            //                 }
+            //             }
+            //         } catch(error) {
+            //             console.error(error);
+                        
+            //         }
+            //     }
+            // });
+            
+            // //find which levels need to be hidden
+            // hidden_level = _.filter(self.data.levels , function (o){ 
+            //     return o.show !== true;
+            // });
+            
+            // //doing it in a loop for future cases where there are more than two floors
+            // _.forEach(hidden_level, function(val, key) {
+            //     $(".mapplic-layer[data-floor='"+val.id+"']").hide();
+            // });
+            
+            
+        // }
+        
+        loadMallDataCached(renderPageData);
+    });
+</script>
