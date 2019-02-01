@@ -1,0 +1,113 @@
+<div class="main_banner text-center">
+    <h2 data-i18n="jobs.title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-12">
+            <h5 class="active_heading"><i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/jobs" data-i18n="jobs.return"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/jobs" data-i18n="jobs.return"></a>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container">
+    <div class="margin_25_across">
+        <div class="row" id="promo_details_container">
+            <script id="promo_details_template" type="x-tmpl-mustache/text">
+                <div class="col-md-8">
+                    <div class="primary-locale">
+                        <h2 class="promo_list_name">{{name}}</h2>
+                        <p>
+                            <span class="promo_store">{{store_name}}</span> |
+                            <span class="promo_store">{{job_type}}</span> |
+                            <span class="promo_dates">End Date: {{end_date}}</span>
+                        </p>
+                        <br>
+                        <div class="details_desc">{{{rich_description}}}</div>
+                        {{#contact_name}}<p>Contact Name: {{contact_name}}</p>{{/contact_name}}
+                        {{#contact_email}}<p>Contact Email: {{contact_email}}</p>{{/contact_email}}
+                        {{#contact_phone}}<p>Contact Phone: {{contact_phone}}</p>{{/contact_phone}}
+                        {{#contact_website}}<p>Website: {{contact_website}}</p>{{/contact_website}}
+                        {{#message}}<p>Message: {{message}}</p>{{/message}}
+                    </div>
+                    <div class="secondary-locale">
+                        <h2 class="promo_list_name">{{name_2}}</h2>
+                        <p>
+                            <span class="promo_store">{{store_name}}</span> |
+                            <span class="promo_store">{{job_type}}</span> |
+                            <span class="promo_dates">Date de fin: {{end_date}}</span>
+                        </p>
+                        <br>
+                        <div class="details_desc">{{{rich_description_2}}}</div>
+                        {{#contact_name}}<p>Nom du contact: {{contact_name}}</p>{{/contact_name}}
+                        {{#contact_email}}<p>Email du contact: {{contact_email}}</p>{{/contact_email}}
+                        {{#contact_phone}}<p>Numéro du contact: {{contact_phone}}</p>{{/contact_phone}}
+                        {{#contact_website}}<p>Site Web: {{contact_website}}</p>{{/contact_website}}
+                        {{#message_2}}<p>Message: {{message_2}}</p>{{/message_2}}
+                    </div>
+                    <div class="mobile_share_container">
+                        Share:
+                        <a href="https://www.facebook.com/sharer.php?u=https://westbrookmall.com/jobs/{{slug}}" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="accessibility">Facebook</p>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=https://westbrookmall.com/jobs/{{slug}}&text={{name}}" target="_blank" data-size="large">
+                            <i class="fa fa-twitter-square"></i>
+                            <p class="accessibility">Twitter</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden_phone">
+                    <img src="{{store_image}}" alt="{{store_name}} Logo" class="store_logo" />
+                    <div class="side_stores">
+                        <a href="/stores/{{store_slug}}" class="animated_btn newsletter_btn" style="{{store_link_show}}">
+                            <span data-i18n="stores.store_details"></span>
+                        </a>
+                        <a href="tel:{{phone}}" class="animated_btn newsletter_btn" style="{{phone_show}}">
+                            <span data-i18n="stores.store_phone"></span>: {{phone}}
+                        </a>
+                        <a href="//{{website}}" target="_blank" class="animated_btn newsletter_btn" style="{{website_show}}">
+                            <span data-i18n="stores.store_website"></span>
+                        </a>
+                    </div>
+                    <div class="share_container">
+                        Share:
+                        <a href="https://www.facebook.com/sharer.php?u=https://westbrookmall.com/jobs/{{slug}}" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="accessibility">Facebook</p>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=https://westbrookmall.com/jobs/{{slug}}&text={{name}}" target="_blank" data-size="large">
+                            <i class="fa fa-twitter-square"></i>
+                            <p class="accessibility">Twitter</p>
+                        </a>
+                    </div>
+                    <div class="margin_20"></div>
+                </div>
+            </script>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("Careers Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var pathArray = window.location.pathname.split( '/' );
+            var slug = pathArray[pathArray.length-1];
+            promo_details = getJobDetailsBySlug(slug);
+            renderJobDetails('#promo_details_container', '#promo_details_template', promo_details, "Westbrook Mall")
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
