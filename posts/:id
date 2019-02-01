@@ -1,0 +1,90 @@
+<div class="main_banner text-center">
+    <h2 data-i18n="blog.title"></h2>
+    <p data-i18n="inside_page.header_tagline"></p>
+</div>
+<div class="store_list_head main_container">
+    <div class="row hidden_phone">
+        <div class="col-md-12">
+            <h5 class="active_heading"><i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/posts" data-i18n="blog.return"></a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/posts" data-i18n="blog.return"></a>
+    </h5>
+</div>
+<div class="content_container main_container">
+    <div class="margin_25_across">
+        <div class="row" id="post_details_container">
+            <script id="post_details_template" type="x-tmpl-mustache/text">
+                <div class="col-md-8">
+                    <div class="primary-locale">
+                        <img src="{{image_url}}" alt="Store Logo" class="details_image" style="{{show_img}}"/>
+                        <h2 class="promo_list_name">{{title}}</h2>
+                        <p class="promo_dates">
+                            <span data-i18n="blog.posted"></span>
+                            <span>{{published_on}}</span>
+                        </p>
+                        <div class="details_desc">{{{html_body}}}</div>
+                    </div>
+                    <div class="secondary-locale">
+                        <img src="{{image_url2}}" alt="Store Logo" class="details_image" style="{{show_img}}" />
+                        <h2 class="promo_list_name">{{title_2}}</h2>
+                        <p class="promo_dates">
+                            <span data-i18n="blog.posted"></span>
+                            <span>{{published_on}}</span>
+                        </p>
+                        <div class="details_desc">{{{html_body_2}}}</div>
+                    </div>
+                    <div class="mobile_share_container">
+                        Share:
+                        <a href="https://www.facebook.com/sharer.php?u=https://lambtonmall.com//posts/{{slug}}" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="accessibility">Facebook</p>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=https://lambtonmall.com/posts/{{slug}}&text={{name}}" target="_blank" data-size="large">
+                            <i class="fa fa-twitter-square"></i>
+                            <p class="accessibility">Twitter</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden_phone">
+                    <img src="//codecloud.cdn.speedyrails.net/sites/5bad55136e6f646976330000/image/png/1538496378502/LamptonMallLogoSquare.png" alt="Lambton Mall Logo" class="store_logo" />
+                    <div class="share_container">
+                        Share:
+                        <a href="https://www.facebook.com/sharer.php?u=https://lambtonmall.com/posts/{{slug}}" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="accessibility">Facebook</p>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=https://lambtonmall.com/posts/{{slug}}&text={{name}}" target="_blank" data-size="large">
+                            <i class="fa fa-twitter-square"></i>
+                            <p class="accessibility">Twitter</p>
+                        </a>
+                    </div>
+                </div>
+            </script>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("News Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var pathArray = window.location.pathname.split( '/' );
+            var slug = pathArray[pathArray.length-1];
+            var post = getPublishedPostDetailsBySlug(slug);
+            var blog = getBlogDataBySlug("westbrook-back-to-school").posts.reverse();
+            renderPostDetails("#post_details_container", "#post_details_template", post, blog);
+            
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
