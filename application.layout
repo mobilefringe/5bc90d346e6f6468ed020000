@@ -57,15 +57,6 @@
     <script>
         setEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/all.json');
         setSocialEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/social.json');
-        
-        Cookies.set('primary_locale', 'en-CA');
-        // Cookies.set('secondary_locale', 'fr-CA');
-
-        // if(getRequestParam('locale') == 'en'){
-        //     setCurrentLocale(Cookies.get('primary_locale'));
-        // } else if(getRequestParam('locale') == 'fr'){
-        //     setCurrentLocale(Cookies.get('secondary_locale'));
-        // }
     </script>
     
     <script>
