@@ -1,22 +1,9 @@
 function init(e){
     $('<div class="modal-backdrop custom_backdrop_load"><div class="loader">Loading...</div></div>').appendTo(document.body);
 
-    // If there is no language set it to the primary locale.
-    if (!Cookies.get('current_locale')) {
-        setPrimaryLanguage();
-    }
-    
-    // if(Cookies.get('current_locale') == "en-CA"){
-    //     $("#set_lang_fr").css({fontWeight: "normal"});
-    //     $("#set_lang_fr_m").css({fontWeight: "normal"});
-    //     $("#set_lang_en").css({fontWeight: "bold"});               
-    //     $("#set_lang_en_m").css({fontWeight: "bold"}); 
-    // }
-    // if(Cookies.get('current_locale') == "fr-CA"){
-    //     $("#set_lang_en").css({fontWeight: "normal"});
-    //     $("#set_lang_en_m").css({fontWeight: "normal"});
-    //     $("#set_lang_fr").css({fontWeight: "bold"});
-    //     $("#set_lang_fr_m").css({fontWeight: "bold"}); 
+    // // If there is no language set it to the primary locale.
+    // if (!Cookies.get('current_locale')) {
+    //     setPrimaryLanguage();
     // }
     
     $('.open_menu').click(function(e){
@@ -264,10 +251,6 @@ function dropPin(svgmap_region) {
     $('.stores_table').hide();
 }
 
-function setCurrentLocale(locale){
-    Cookies.set('current_locale', locale);
-}
-
 function setPrimaryLanguage(){
     i18n.setLng(Cookies.get('primary_locale'), function(t) {
         $(document).i18n();
@@ -275,13 +258,4 @@ function setPrimaryLanguage(){
     Cookies.set('current_locale', Cookies.get('primary_locale'))
     $('.primary-locale').show(); // Shows
     $('.secondary-locale').hide();
-}
-
-function setSecondaryLanguage(){
-    i18n.setLng(Cookies.get('secondary_locale'), function(t) {
-        $(document).i18n();
-    });
-    Cookies.set('current_locale', Cookies.get('secondary_locale'))
-    $('.secondary-locale').show();
-    $('.primary-locale').hide();
 }
