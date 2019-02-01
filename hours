@@ -1,29 +1,29 @@
 <div class="main_banner text-center">
-    <h2 data-i18n="hours.title"></h2>
-    <p data-i18n="inside_page.header_tagline"></p>
+    <h2>Shopping Hours</h2>
+    <p></p>
 </div>
 <div class="store_list_head main_container">
     <div class="row hidden_phone">
         <div class="col-md-3">
-            <h5 class="active_heading" data-i18n="inside_page.hours"></h5>
+            <h5 class="active_heading">Shopping Hours</h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
+            <h5><a href="/pages/westbrook-security">Security</a></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
+            <h5><a href="/pages/westbrook-accessability">Accessibility</a></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+            <h5><a href="/pages/westbrook-act-green-initiatives">ACT Green</a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected>Tap For More Options</option>
-            <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
-            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
-            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+            <option value="/pages/westbrook-security">Security</option>
+            <option value="/pages/westbrook-accessability">Accessibility</option>
+            <option value="/pages/westbrook-act-green-initiatives">ACT Green</option>
         </select>
     </h5>
 </div>
@@ -32,7 +32,7 @@
     <div class="margin_25_across">
         <div class="row">
             <div class="col-md-6"> 
-                <h3 class="hours_heading" data-i18n="hours.regular_hours"></h3>
+                <h3 class="hours_heading" data-i18n="hours.regular_hours">Regular Hours</h3>
                 <div id="hours_container" class="hours_container">
                     <script id="hours_template" type="x-tmpl-mustache/text">
                         <div class="hours_div">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h3 class="hours_heading" data-i18n="hours.reduced_hours"></h3>
+                <h3 class="hours_heading" data-i18n="hours.reduced_hours">Holiday Hours of Operation</h3>
                 <div id="holidays_hours_container" class="hours_container">
                     <script id="holidays_hours_template" type="x-tmpl-mustache/text">
                         <div class="hours_div">
@@ -52,7 +52,7 @@
                         </div>
                     </script>
                 </div>
-                <h3 class="hours_heading" data-i18n="hours.closed_hours"></h3>
+                <h3 class="hours_heading" data-i18n="hours.closed_hours">Holiday Closures</h3>
                 <div id="closed_hours_container" class="hours_container">
                     <script id="closed_hours_template" type="x-tmpl-mustache/text">
                         <div class="hours_div">
