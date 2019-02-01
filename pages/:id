@@ -14,7 +14,7 @@
             <h5><a href="/pages/westbrook-accessability">Accessibility</a></h5>
         </div>
          <div class="col-md-3">
-            <h5 class="active_heading" data-i18n="inside_page.act_green"></h5>
+            <h5 class="active_heading">ACT Green</h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
@@ -39,7 +39,7 @@
             <h5><a href="/pages/westbrook-accessability">Accessibility</a></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+            <h5><a href="/pages/westbrook-act-green-initiatives">ACT Green</a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
@@ -48,7 +48,7 @@
             <option value="" disabled selected>Tap For More Options</option>
             <option value="/hours">Hours</option>
             <option value="/pages/westbrook-accessability">Accessibility</option>
-            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+            <option value="/pages/westbrook-act-green-initiatives">ACT Green</option>
         </select>
     </h5>
 </div>
@@ -64,7 +64,7 @@
             <h5 class="active_heading">Accessibility</h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
+            <h5><a href="/pages/westbrook-act-green-initiatives">ACT Green</a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
@@ -73,7 +73,7 @@
             <option value="" disabled selected>Tap For More Options</option>
             <option value="/hours">Hours</option>
             <option value="/pages/westbrook-security">Security</option>
-            <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
+            <option value="/pages/westbrook-act-green-initiatives">ACT Green</option>
         </select>
     </h5>
 </div>
@@ -103,14 +103,8 @@
             prefix = get_prefix();
             var pages_json = prefix + "/pages/" + slug + ".json"
             $.getJSON(pages_json).done(function(data) {
-                if(Cookies.get('current_locale') == "en-CA"){
-                    $('#mm_page_title').html(data.title.toUpperCase());
-                    $('#mm_page_content').html(data.body);
-                }
-                if(Cookies.get('current_locale') == "fr-CA"){
-                    $('#mm_page_title').html(data.title_2.toUpperCase());
-                    $('#mm_page_content').html(data.body_2);
-                }
+                $('#mm_page_title').html(data.title.toUpperCase());
+                $('#mm_page_content').html(data.body);
             }).fail(function(jqXHR) {
                 if (jqXHR.status == 404) {
                     $("#404_msg").fadeIn("fast");
@@ -118,18 +112,14 @@
             }); 
             
             // check if top header should be shown 
-            if(slug == 'westbrook-act-green-initiatives'){
+            if (slug == 'westbrook-act-green-initiatives') {
                 $("#act_green").show();
-                
-            }
-            else if (slug == 'westbrook-security'){
+            } else if (slug == 'westbrook-security') {
                 $("#security").show();
-                
-            }
-            else if (slug == 'westbrook-accessability'){
+            } else if (slug == 'westbrook-accessability') {
                 $("#accessibility").show();
-                
             }
+            
             show_content();
         }
         loadMallDataCached(renderAll); 
