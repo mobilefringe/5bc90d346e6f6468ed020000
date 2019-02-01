@@ -1,21 +1,21 @@
 <div class="main_banner text-center">
-    <h2 data-i18n="inside_page.contact"></h2>
-    <p data-i18n="inside_page.header_tagline"></p>
+    <h2>Contact Us</h2>
+    <p></p>
 </div>
 <div class="store_list_head main_container">
     <div class="row hidden_phone">
         <div class="col-md-6">
-            <h5 class="active_heading" data-i18n="inside_page.contact"></h5>
+            <h5 class="active_heading">Contact Us</h5>
         </div>
         <div class="col-md-6">
-            <h5><a href="/leasing" data-i18n="inside_page.leasing"></a></h5>
+            <h5><a href="/leasing">Leasing</a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected>Tap For More Options</option>
-            <option value="/leasing" data-i18n="inside_page.leasing"></option>
+            <option value="/leasing">Leasing</option>
         </select>
     </h5>
 </div>
@@ -44,19 +44,16 @@
             var prefix = get_prefix();
             var pages_json = prefix + "/pages/westbrook-contact-us.json"
             $.getJSON(pages_json).done(function(data) {
-                if(Cookies.get('current_locale') == "en-CA"){
-                    $('#mm_page_content').html(data.body);
-                }
-                if(Cookies.get('current_locale') == "fr-CA"){
-                    $('#mm_page_content').html(data.body_2);
-                }
+                $('#mm_page_content').html(data.body);
             }).fail(function(jqXHR) {
                 if (jqXHR.status == 404) {
                     $("#404_msg").fadeIn("fast");
                 }
             }); 
+            
             show_content();
         }
+        
         loadMallDataCached(renderAll); 
     })
 </script>
