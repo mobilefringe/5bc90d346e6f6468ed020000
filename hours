@@ -5,7 +5,7 @@
 <div class="store_list_head main_container">
     <div class="row hidden_phone">
         <div class="col-md-3">
-            <h5 class="active_heading">Shopping Hours</h5>
+            <h5 class="active_heading">Hours</h5>
         </div>
         <div class="col-md-3">
             <h5><a href="/pages/westbrook-security">Security</a></h5>
