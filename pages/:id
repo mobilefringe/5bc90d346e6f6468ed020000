@@ -5,13 +5,13 @@
 <div class="store_list_head main_container hidden_now" id="act_green">
     <div class="row hidden_phone">
         <div class="col-md-3">
-            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+            <h5><a href="/hours">Hours</a></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
+            <h5><a href="/pages/westbrook-security">Security</a></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
+            <h5><a href="/pages/westbrook-accessability">Accessibility</a></h5>
         </div>
          <div class="col-md-3">
             <h5 class="active_heading" data-i18n="inside_page.act_green"></h5>
@@ -21,22 +21,22 @@
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected>Tap For More Options</option>
-            <option value="/hours" data-i18n="inside_page.hours"></option>
-            <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
-            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
+            <option value="/hours">Hours</option>
+            <option value="/pages/westbrook-security">Security</option>
+            <option value="/pages/westbrook-accessability">Accessibility</option>
         </select>
     </h5>
 </div>
 <div class="store_list_head main_container hidden_now" id="security">
     <div class="row hidden_phone">
         <div class="col-md-3">
-            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+            <h5><a href="/hours">Hours</a></h5>
         </div>
         <div class="col-md-3">
-            <h5  class="active_heading" data-i18n="inside_page.security"></h5>
+            <h5  class="active_heading">Security</h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></a></h5>
+            <h5><a href="/pages/westbrook-accessability">Accessibility</a></h5>
         </div>
         <div class="col-md-3">
             <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
@@ -46,8 +46,8 @@
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected>Tap For More Options</option>
-            <option value="/hours" data-i18n="inside_page.hours"></option>
-            <option value="/pages/westbrook-accessability" data-i18n="inside_page.accessibility"></option>
+            <option value="/hours">Hours</option>
+            <option value="/pages/westbrook-accessability">Accessibility</option>
             <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
         </select>
     </h5>
@@ -55,13 +55,13 @@
 <div class="store_list_head main_container hidden_now" id="accessibility">
     <div class="row hidden_phone">
         <div class="col-md-3">
-            <h5><a href="/hours" data-i18n="inside_page.hours"></a></h5>
+            <h5><a href="/hours">Hours</a></h5>
         </div>
         <div class="col-md-3">
-            <h5><a href="/pages/westbrook-security" data-i18n="inside_page.security"></a></h5>
+            <h5><a href="/pages/westbrook-security">Security</a></h5>
         </div>
         <div class="col-md-3">
-            <h5 class="active_heading" data-i18n="inside_page.accessibility"></h5>
+            <h5 class="active_heading">Accessibility</h5>
         </div>
         <div class="col-md-3">
             <h5><a href="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></a></h5>
@@ -71,8 +71,8 @@
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected>Tap For More Options</option>
-            <option value="/hours" data-i18n="inside_page.hours"></option>
-            <option value="/pages/westbrook-security" data-i18n="inside_page.security"></option>
+            <option value="/hours">Hours</option>
+            <option value="/pages/westbrook-security">Security</option>
             <option value="/pages/westbrook-act-green-initiatives" data-i18n="inside_page.act_green"></option>
         </select>
     </h5>
