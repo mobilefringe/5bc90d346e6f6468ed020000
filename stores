@@ -45,7 +45,7 @@
             </div>
             <div class="col-md-4 hidden_phone">
                 <div id="new_stores">
-                    <p class="category_header" data-i18n="stores.new_stores"></p>
+                    <p class="category_header">New Stores</p>
                     <div id="new_store_container">
                         <script id="new_store_template" type="x-tmpl-mustache/text">
                             <h5 class="category_name"><a href="/stores/{{slug}}">{{name}}</a></h5>  
@@ -53,15 +53,15 @@
                     </div>
                 </div>
                 <div id="coming_soon_stores">
-                    <p class="category_header" data-i18n="stores.coming_soon"></p>
+                    <p class="category_header">Coming Soon</p>
                     <div id="coming_soon_container">
                         <script id="coming_soon_template" type="x-tmpl-mustache/text">
                             <h5 class="category_name"><a href="/stores/{{slug}}">{{name}}</a></h5>    
                         </script>
                     </div>
                 </div>
-                <p class="category_header" data-i18n="stores.category"></p>
-                <h5 class="category_name active_cat hidden_phone"><a href="#" class="show_all_stores" data-i18n="stores.categories_all"></a></h5>
+                <p class="category_header">Categories</p>
+                <h5 class="category_name active_cat hidden_phone"><a href="#" class="show_all_stores">All</a></h5>
                 <div id="category_container" class="hidden_phone">
                     <script id="category_template" type="x-tmpl-mustache/text">
                         <h5 class="category_name"><a href="#" class="show_cat_stores" data-id="{{id}}">{{cat_name}}</a></h5>
