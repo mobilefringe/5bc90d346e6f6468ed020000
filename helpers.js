@@ -1,11 +1,6 @@
 function init(e){
     $('<div class="modal-backdrop custom_backdrop_load"><div class="loader">Loading...</div></div>').appendTo(document.body);
 
-    // // If there is no language set it to the primary locale.
-    // if (!Cookies.get('current_locale')) {
-    //     setPrimaryLanguage();
-    // }
-    
     $('.open_menu').click(function(e){
         e.preventDefault();
         $('body').addClass('no_scroll');
@@ -249,13 +244,4 @@ function dropPin(svgmap_region) {
     self = map.data('mapplic');
     self.showLocation(svgmap_region);
     $('.stores_table').hide();
-}
-
-function setPrimaryLanguage(){
-    i18n.setLng(Cookies.get('primary_locale'), function(t) {
-        $(document).i18n();
-    });
-    Cookies.set('current_locale', Cookies.get('primary_locale'))
-    $('.primary-locale').show(); // Shows
-    $('.secondary-locale').hide();
 }
