@@ -10,43 +10,22 @@
                 <div id="promos_container">
                     <script id="promos_template" type="x-tmpl-mustache/text">
                         <div class="row promo_item">
-                            <div class="primary-locale">
-                                <div class="col-md-3">
-                                    <div class="cropped_image">
-                                        <img src="{{promo_image_url_abs}}" alt="{{name}}" />
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <h2 class="promo_list_name">{{name}}</h2>
-                                    <p>
-                                        <a href="{{store_slug}}" class="underline promo_store" style="{{store_show}}">{{store_name}}</a>
-                                        <span class="promo_store" style="{{mall_show}}">{{store_name}}</span>
-                                        <span class="hidden_phone"> | </span><span class="promo_dates">{{dates}}</span>
-                                    </p>
-                                    <div class="promo_list_desc">{{description_short}}</div>
-                                    <a class="newsletter_btn animated_btn inside_btn" href="/promotions/{{slug}}">
-                                        View Deals Details <i class="fa fa-angle-right"></i>
-                                    </a>
+                            <div class="col-md-3">
+                                <div class="cropped_image">
+                                    <img src="{{promo_image_url_abs}}" alt="{{name}}" />
                                 </div>
                             </div>
-                            <div class="secondary-locale">
-                                <div class="col-md-3">
-                                    <div class="cropped_image">
-                                        <img src="{{promo_image2_url_abs}}" alt="{{name}}" />
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <h2 class="promo_list_name">{{name_2}}</h2>
-                                    <p>
-                                        <a href="{{store_slug}}" class="underline promo_store" style="{{store_show}}">{{store_name}}</a>
-                                        <span class="promo_store" style="{{mall_show}}">{{store_name}}</span>
-                                        <span class="hidden_phone"> | </span><span class="promo_dates">{{dates}}</span>
-                                    </p>
-                                    <div class="promo_list_desc">{{description_short_2}}</div>
-                                    <a class="newsletter_btn animated_btn inside_btn" href="/promotions/{{slug}}">
-                                        Afficher les détails de l’aubaine  <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </div>
+                            <div class="col-md-9">
+                                <h2 class="promo_list_name">{{name}}</h2>
+                                <p>
+                                    <a href="{{store_slug}}" class="underline promo_store" style="{{store_show}}">{{store_name}}</a>
+                                    <span class="promo_store" style="{{mall_show}}">{{store_name}}</span>
+                                    <span class="hidden_phone"> | </span><span class="promo_dates">{{dates}}</span>
+                                </p>
+                                <div class="promo_list_desc">{{description_short}}</div>
+                                <a class="newsletter_btn animated_btn inside_btn" href="/promotions/{{slug}}">
+                                    View Deals Details <i class="fa fa-angle-right"></i>
+                                </a>
                             </div>
                         </div>
                     </script>
@@ -82,7 +61,7 @@
                     published_promos.push(val)
                 } 
             });
-            if(published_promos.length > 0){
+            if (published_promos.length > 0) {
                 renderPromotions("#promos_container","#promos_template", published_promos, "Westbrook Mall");
             } else {
                 $('#no_promos').show()
