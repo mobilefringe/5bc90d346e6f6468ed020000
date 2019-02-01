@@ -1,15 +1,15 @@
 <div class="main_banner text-center">
-    <h2 data-i18n="events.title"></h2>
-    <p data-i18n="inside_page.header_tagline"></p>
+    <h2>Events</h2>
+    <p></p>
 </div>
 <div class="store_list_head main_container">
     <div class="row hidden_phone">
         <div class="col-md-12">
-            <h5 class="active_heading"><i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/events" data-i18n="events.return"></a></h5>
+            <h5 class="active_heading"><i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/events">Return to Events</a></h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
-        <i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/events" data-i18n="events.return"></a>
+        <i class="fa fa-angle-left" aria-hidden="true"></i> <a href="/events">Return to Events</a>
     </h5>
 </div>
 <div class="content_container main_container">
@@ -17,20 +17,11 @@
         <div class="row" id="promo_details_container">
             <script id="promo_details_template" type="x-tmpl-mustache/text">
                 <div class="col-md-8">
-                    <div class="primary-locale">
-                        <img src="{{image_url}}" alt="Store Logo" class="details_image" style="{{show_img}}"/>
-                        <h2 class="promo_list_name">{{name}}</h2>
-                        <p class="promo_dates">{{dates}}</p>
-                        <p class="show_phone promo_store">{{store_name}}</p>
-                        <div class="details_desc">{{{rich_description}}}</div>
-                    </div>
-                    <div class="secondary-locale">
-                        <img src="{{image_url}}" alt="Store Logo" class="details_image" style="{{show_img}}" />
-                        <h2 class="promo_list_name">{{name_2}}</h2>
-                        <p class="promo_dates">{{dates}}</p>
-                        <p class="show_phone promo_store">{{store_name}}</p>
-                        <div class="details_desc">{{{rich_description_2}}}</div>
-                    </div>
+                    <img src="{{image_url}}" alt="Store Logo" class="details_image" style="{{show_img}}"/>
+                    <h2 class="promo_list_name">{{name}}</h2>
+                    <p class="promo_dates">{{dates}}</p>
+                    <p class="show_phone promo_store">{{store_name}}</p>
+                    <div class="details_desc">{{{rich_description}}}</div>
                     <div class="mobile_share_container">
                         Share:
                         <a href="https://www.facebook.com/sharer.php?u=https://westbrookmall.com/events/{{slug}}" target="_blank">
