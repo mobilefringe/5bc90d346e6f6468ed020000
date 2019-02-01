@@ -1,6 +1,6 @@
 <div class="main_banner text-center">
     <h2>Stores</h2>
-    <p data-i18n="inside_page.header_tagline"></p>
+    <p></p>
 </div>
 <div class="store_list_head main_container">
     <div class="row hidden_phone">
