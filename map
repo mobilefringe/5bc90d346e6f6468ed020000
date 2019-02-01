@@ -1,21 +1,21 @@
 <div class="main_banner text-center">
-    <h2 data-i18n="map.title"></h2>
-    <p data-i18n="inside_page.header_tagline"></p>
+    <h2>Shopping Map</h2>
+    <p></p>
 </div>
 <div class="store_list_head main_container">
     <div class="row hidden_phone">
         <div class="col-md-6">
-            <h5><a href="/stores" data-i18n="inside_page.stores"></a></h5>
+            <h5><a href="/stores">Stores</a></h5>
         </div>
         <div class="col-md-6">
-            <h5 class="active_heading" data-i18n="inside_page.map"></h5>
+            <h5 class="active_heading">Shopping Map</h5>
         </div>
     </div>
     <h5 class="text-center tap_here show_phone">
         <label class="accessibility" for="option_selector">Select an Option</label>
         <select id="option_selector" class="link_selector">
             <option value="" disabled selected>Tap For More Options</option>
-            <option value="/stores" data-i18n="inside_page.stores"></option>
+            <option value="/stores">Stores</option>
         </select>
     </h5>
 </div>
@@ -24,9 +24,9 @@
     <div class="margin_25_across">
         <div class="row">
             <div class="col-md-4 hidden_phone">
-                <a id="store_scroll_up" href="#" class="store_list_navigation" data-i18n="map.scroll_up"></a>
-                <a id="store_scroll_down" href="#" class="store_list_navigation" data-i18n="map.scroll_down"></a>
-                <p class="category_header" data-i18n="map.find_store"></p>
+                <a id="store_scroll_up" href="#" class="store_list_navigation">Scroll Up</a>
+                <a id="store_scroll_down" href="#" class="store_list_navigation">Scroll Down</a>
+                <p class="category_header">Find A Store</p>
                 <div id="stores_container">
                     <script id="stores_template" type="x-tmpl-mustache/text">
                         <h5 class="category_name"><a class="map_pin_a" href="#" store_id="{{id}}" store_name="{{name}}" store_x_coordinate="{{x_coordinate}}" store_y_coordinate="{{y_coordinate}}" data-svg="{{svgmap_region}}">{{name}}</a></h5>
@@ -35,7 +35,7 @@
             </div> 
             <div class="col-md-8">
                 <div class="map_mobile_selection">
-                    <label class="accessibility" for="store_mobile_conatiner" data-i18n="map.select"></label>
+                    <label class="accessibility" for="store_mobile_conatiner">Select a Store</label>
                     <select id="store_mobile_conatiner">
                         <script id="store_mobile_template" type="x-tmpl-mustache/text">
                             <option store_id="{{id}}" store_name="{{name}}" x_coordinate="{{x_coordinate}}" y_coordinate="{{y_coordinate}}">{{name}}</option>    
@@ -70,7 +70,7 @@
             renderStoreList('#stores_container','#stores_template', stores, "A", "Z");
             renderStoreList('#store_mobile_conatiner','#store_mobile_template', stores, "A", "Z");
             
-            $("#store_mobile_conatiner").prepend('<option value="" disabled selected data-i18n="map.select"></option>')
+            $("#store_mobile_conatiner").prepend('<option value="" disabled selected>Select a Store</option>')
     
             var mall_json = {};
             var landmarks = {};
@@ -87,9 +87,8 @@
                 floor_1.map = value.map;
                 floor_1.show = value.show;
                 floor_1.locations = [];
-                // var stores_on_floors =  _.filter(stores, function(o) {return value.z_index === o.z_coordinate;}); 
                 var stores_on_floors= [];
-                if( value.z_index === 0) {
+                if ( value.z_index === 0) {
                     stores_on_floors = stores;
                 } else {
                     stores_on_floors = _.filter(stores, function(o) { if(o.z_coordinate == null) {return true;} else { return value.z_index === o.z_coordinate; }});
@@ -101,12 +100,13 @@
                     temp_val.title = val.name;
                     temp_val.about = val.description.substring(0,200);
                     if(val.categories != null) {
-                        if(val.categories.length > 1){
+                        if (val.categories.length > 1) {
                         temp_val.category = val.categories[1];
                         } else {
                             temp_val.category = val.categories[0];
                         }
                     }
+                    
                     temp_val.zoom = 2;
                     temp_val.link = "/stores/" + val.slug;
                     temp_val.pin = "hidden";
@@ -115,16 +115,14 @@
                     var svg_width = 800;
                     var svg_height = 852;
 
-                    if(val.x_coordinate) {
+                    if (val.x_coordinate) {
                         temp_val.x = val.x_coordinate / svg_width;
-                    }
-                    else {
+                    } else {
                         temp_val.x = 0.5;
                     }
                     if(val.y_coordinate) {
                         temp_val.y = val.y_coordinate / svg_height;
-                    }
-                    else {
+                    } else {
                         temp_val.y = 0.5;
                     }
                     floor_1.locations.push(temp_val);
@@ -151,8 +149,6 @@
             });
             
             map.on('mapready', function(e, self) {
-				console.log('Map is ready!');
-				// mapLoaded(map);
 				$('.map_pin_a').click(function(e){
                     e.preventDefault();
                     var svgmap_region = $(this).attr('store_id');
@@ -171,56 +167,6 @@
 			});
         }
 
-        // function mapLoaded (map) {
-        //     self = map.data('mapplic');
-        //     var svg = document.getElementById('Layer_1');
-            
-            //get floors to be visible 
-            // $(".mapplic-layer").show();
-            //go through all the regions and recalculate the locations
-            // _.forEach(svgList(), function(val, key) {
-            //     if(val != null) {
-            //         try {
-            //             var element = document.getElementById(val);
-            //             if (element){
-            //                 elBBox = element.getBoundingClientRect();
-            //                 var viewport_center_x = 0;
-            //                 var viewport_center_y = 0;
-            //                 viewport_center_x = (_.toNumber(elBBox.left) + _.toNumber(elBBox.right) )/2;
-            //                 viewport_center_y = (_.toNumber(elBBox.top) + _.toNumber(elBBox.bottom) )/2;
-            //                 pt = svg.createSVGPoint();
-            //                 pt.x = viewport_center_x;
-            //                 pt.y = viewport_center_y;
-            //                 var svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
-            //                 var new_x = svgP.x/ 2500;
-            //                 var new_y = svgP.y/ 2500;
-            //                 var location = self.getLocationData(val);
-            //                 if(location !== null && location.el){
-            //                     location.x = new_x;
-            //                     location.y =  new_y;
-            //                     self.updateLocation(val);
-            //                 }
-            //             }
-            //         } catch(error) {
-            //             console.error(error);
-                        
-            //         }
-            //     }
-            // });
-            
-            // //find which levels need to be hidden
-            // hidden_level = _.filter(self.data.levels , function (o){ 
-            //     return o.show !== true;
-            // });
-            
-            // //doing it in a loop for future cases where there are more than two floors
-            // _.forEach(hidden_level, function(val, key) {
-            //     $(".mapplic-layer[data-floor='"+val.id+"']").hide();
-            // });
-            
-            
-        // }
-        
         loadMallDataCached(renderPageData);
     });
 </script>
