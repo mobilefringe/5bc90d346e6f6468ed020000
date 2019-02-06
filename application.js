@@ -1,4 +1,5 @@
 var default_image_url = "//codecloud.cdn.speedyrails.net/sites/5c522e2f6e6f644e92010000/image/png/1540229651296/westbrook_logo_default.png"
+
 function renderBanner(banner_template,home_banner,banners){
     var item_list = [];
     var item_rendered = [];
@@ -39,16 +40,7 @@ function renderCategoryList(container, template, collection){
     var template_html = $(template).html();
     Mustache.parse(template_html); 
     $.each( collection , function( key, val ) {
-        if(Cookies.get('current_locale') == "en-CA"){
-            val.cat_name = val.name;
-        }
-        if(Cookies.get('current_locale') == "fr-CA"){
-            if(val.name_2 != null) {
-                val.cat_name = val.name_2;
-            } else {
-                val.cat_name = val.name;    
-            }
-        }
+        val.cat_name = val.name;
         
         var repo_rendered = Mustache.render(template_html,val);
         item_rendered.push(repo_rendered);
@@ -70,51 +62,26 @@ function renderEvents(container, template, collection, centre){
             val.store_name = centre;
         }
         
-        // English Image
+        // Image
         if (val.event_image_url_abs.indexOf('missing.png') > 0){
             val.event_image_url_abs = default_image_url;
         }
-        // French Image
-        if (val.event_image2_url_abs.indexOf('missing.png') > 0){
-            if (val.event_image_url_abs.indexOf('missing.png') > 0){
-                val.event_image2_url_abs = default_image_url;
-            } else {
-                val.event_image2_url_abs = val.event_image_url_abs;
-            }
-        }
         
-        // English Description
+        // Description
         if (val.description.length > 200){
             val.description_short = val.description.substring(0,200) + "...";
         } else {
             val.description_short = val.description
         }
-        // French Description
-        if (val.description_2 && val.description_2.length > 200){
-            val.description_short_2 = val.description_2.substring(0,200) + "...";
-        } else {
-            val.description_short_2 = val.description_2
-        }
-        
+       
         var show_date = moment(val.show_on_web_date);
         var start = moment(val.start_date).tz(getPropertyTimeZone());
         var end = moment(val.end_date).tz(getPropertyTimeZone());
-        var french_start = moment(start).locale('fr-ca');
-        var french_end = moment(end).locale('fr-ca');
+        
         if (start.format("DMY") == end.format("DMY")){
-            if(Cookies.get('current_locale') == "en-CA"){
-                val.dates = start.format("MMM D");
-            }
-            if(Cookies.get('current_locale') == "fr-CA"){
-                val.dates = french_start.format("DD MMM");
-            }
+            val.dates = start.format("MMM D");
         } else {
-            if(Cookies.get('current_locale') == "en-CA"){
-                val.dates = start.format("MMM D") + " - " + end.format("MMM D");
-            }
-            if(Cookies.get('current_locale') == "fr-CA"){
-                val.dates = french_start.format("DD MMM") + " - " + french_end.format("DD MMM");
-            }
+            val.dates = start.format("MMM D") + " - " + end.format("MMM D");
         }
 
         var rendered = Mustache.render(template_html,val);
@@ -156,43 +123,22 @@ function renderEventDetails(container, template, collection, mall_name){
             val.phone_show = "display:none";
             val.show = "display:none";
             
-            // English Image
+            // Image
             if (val.event_image_url_abs.indexOf('missing.png') > 0){
                 val.show_img = "display: none"
             } else {
                 val.image_url = val.promo_image_url_abs;
-            }
-            // French Image
-            if (val.event_image2_url_abs.indexOf('missing.png') > 0){
-                if (val.event_image_url_abs.indexOf('missing.png') > 0){
-                    val.show_img = "display: none"
-                } else {
-                    val.image_url = val.event_image_url_abs;
-                }
-            } else {
-                val.image_url = val.event_image2_url_abs;
             }
         }
 
         var show_date = moment(val.show_on_web_date);
         var start = moment(val.start_date).tz(getPropertyTimeZone());
         var end = moment(val.end_date).tz(getPropertyTimeZone());
-        var french_start = moment(start).locale('fr-ca');
-        var french_end = moment(end).locale('fr-ca');
-        if (start.format("DMY") == end.format("DMY")){
-            if(Cookies.get('current_locale') == "en-CA"){
-                val.dates = start.format("MMM D");
-            }
-            if(Cookies.get('current_locale') == "fr-CA"){
-                val.dates = french_start.format("DD MMM");
-            }
+        
+        if (start.format("DMY") == end.format("DMY")) {
+            val.dates = start.format("MMM D");
         } else {
-            if(Cookies.get('current_locale') == "en-CA"){
-                val.dates = start.format("MMM D") + " - " + end.format("MMM D");
-            }
-            if(Cookies.get('current_locale') == "fr-CA"){
-                val.dates = french_start.format("DD MMM") + " - " + french_end.format("DD MMM");
-            }
+            val.dates = start.format("MMM D") + " - " + end.format("MMM D");
         }
         
         var rendered = Mustache.render(template_html,val);
