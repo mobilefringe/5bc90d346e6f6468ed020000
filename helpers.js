@@ -171,7 +171,6 @@ function show_cat_stores(){
     
 function getDay(day_of_week){
     var day;
-    // if(Cookies.get('current_locale') == "en-CA"){
         switch (day_of_week){
             case 0:
                 day = "Sunday";
