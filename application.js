@@ -211,7 +211,6 @@ function renderHours(container, template, collection, type){
         $.each(collection, function(key, val) {
             if (!val.store_id && val.is_holiday == false) {
                 var day = getDay(val.day_of_week);
-                console.log("day", day)
                 val.day = day;
                 
                 if (val.open_time && val.close_time && val.is_closed == false){
