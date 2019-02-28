@@ -171,7 +171,7 @@ function show_cat_stores(){
     
 function getDay(day_of_week){
     var day;
-    if(Cookies.get('current_locale') == "en-CA"){
+    // if(Cookies.get('current_locale') == "en-CA"){
         switch (day_of_week){
             case 0:
                 day = "Sunday";
@@ -195,32 +195,32 @@ function getDay(day_of_week){
                 day = "Saturday";
                 break;
         }
-    }
-    if(Cookies.get('current_locale') == "fr-CA"){
-        switch (day_of_week){
-            case 0:
-                day = "Dimanche";
-                break;
-            case 1:
-                day = "Lundi";
-                break;
-            case 2:
-                day = "Mardi";
-                break;
-            case 3:
-                day = "Mercredi";
-                break;
-            case 4:
-                day = "Jeudi";
-                break;
-            case 5:
-                day = "Vendredi";
-                break;
-            case 6:
-                day = "Samedi";
-                break;
-        }
-    } 
+    // }
+    // if(Cookies.get('current_locale') == "fr-CA"){
+    //     switch (day_of_week){
+    //         case 0:
+    //             day = "Dimanche";
+    //             break;
+    //         case 1:
+    //             day = "Lundi";
+    //             break;
+    //         case 2:
+    //             day = "Mardi";
+    //             break;
+    //         case 3:
+    //             day = "Mercredi";
+    //             break;
+    //         case 4:
+    //             day = "Jeudi";
+    //             break;
+    //         case 5:
+    //             day = "Vendredi";
+    //             break;
+    //         case 6:
+    //             day = "Samedi";
+    //             break;
+    //     }
+    // } 
     return day;
 }
 
