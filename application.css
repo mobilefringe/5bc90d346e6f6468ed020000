@@ -1648,11 +1648,11 @@ h4 {
 .holiday_hours_home{
     margin-bottom: 11px;
     font-family: $font_family;
-    font-weight: 700;
+    font-weight: 300;
     font-size: 14px;
-    color: $primary;
+    color: #b85c0e;
     &:hover{
-        color: $primary;
+        color: #b85c0e;
     }
 }
 
