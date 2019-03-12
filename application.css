@@ -2909,7 +2909,7 @@ g.mapplic-active > * {
     
     .category_header{
         font-family: $font_family;
-        font-weight: 400;
+        font-weight: bolder;
         color: $primary;
         font-size: 20px;
         text-transform: uppercase;
