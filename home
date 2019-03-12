@@ -1,0 +1,228 @@
+<div class="popup_home hidden_now">
+    <!--<a href="#" target="_blank">-->
+    <!--    <img src="#" alt="pop up" />-->
+    <!--</a>-->
+    <img src="#" alt="pop up" />
+    <div class="homepop_up_container">
+        <div class="pop_up_form_container">
+            <div class="pop_up_form">
+                <h4 class="popup_header1">JOIN OUR NEWSLETTER</h4>
+                <form action="https://mobilefringe.createsend.com/t/d/s/ykblk/" method="post" id="popupForm">
+                    <label for="name_pop_up">Name</label>
+                    <input id="name_pop_up" type="text" name=cm-name>
+                    
+                    <label for="fieldEmail">Email*</label>
+                    <input id="fieldEmail" name=cm-ykblk-ykblk type="email" required/>  
+                    
+                    <label for="postal_pop_up" >Postal Code</label>
+                    <input id="postal_pop_up" type="text" name=cm-f-ydcyu>
+                    
+                    <label>
+                        <label style="display:none" for="agree">Subscribe</label>
+                        <input type="checkbox" class="info_check" id="agree" required/> I agree to receive newsletters from Lambton Mall
+                    </label>
+                    <br/> 
+                    <button class="btn btn-success">Subscribe</button>                      
+                    <br /><br />
+                    <span id="success">Thank you for subscribing to our newsletter.</span>
+                </form>
+            </div>
+        </div>  
+    </div>
+    <i class="fa fa-remove close_popup"></i>
+</div>
+<div class="home_banner">
+    <div class="flexslider text-center">
+        <!-- UNCOMMENT FOR DYMANIC CONTENT -->
+        <!--<ul class="slides" id="home_banner">-->
+        <!--    <script id="banner_template" type="x-tmpl-mustache/text">-->
+        <!--        <li class="position_relative">-->
+        <!--            {{#url}}<a href="{{url}}" {{css}} onclick="{{noLink}}">{{/url}}-->
+        <!--                <div class="hero_banner" style="background-image: url({{image_url}})"></div>-->
+        <!--            </a>-->
+        <!--        </li>-->
+        <!--    </script>-->
+        <!--</ul>-->
+        <ul class="slides" id="home_banner">
+            <li class="position_relative">
+                <a href="/stores" {{css}}>
+                    <div class="hero_banner" aria-label="link to stores" style="background-image: url('//codecloud.cdn.speedyrails.net/sites/5c8813856e6f6418f6030000/image/jpeg/1541614076000/Winter-Web NEW 1920 x 540.jpg')"></div>
+                </a>
+            </li>
+          
+        </ul>
+    </div>
+    <div class="banner_text" id="welcome_msg_container">
+        <script id="welcome_msg_template" type="x-tmpl-mustache/text">
+            {{#welcome_message}}<h3>
+                {{welcome_message}}
+            </h3>{{/welcome_message}}
+            {{#description}}<p>
+                {{description}}
+            </p>{{/description}}
+        </script>
+    </div>
+</div>
+<div class="content_container main_container">
+    <div class="feature_items_box mobile_padding">
+        <div class="feature_row">
+            <div class="feature_item">
+                <div id="feature_0" class="position_relative"></div>
+                <div id="feature_1" class="position_relative"></div>
+            </div>
+            <div class="feature_item">
+                <div class="social_box twitter_box text-center" id="social_twitter">
+                    <span class="hidden-sm hidden-xs">
+                        <div class="feature_insta_conatiner">
+                            <a href="https://twitter.com/westbrookmall" target="_blank">
+                                <h5 id="twitter_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
+                            </a>        
+                        </div>
+                    </span>
+                    <span class="visible-sm-block visible-xs-block">
+                        <a href="https://twitter.com/westbrookmall" target="_blank">
+                            <h5 id="twitter_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
+                        </a> 
+                    </span>
+                    
+                </div>
+                <div id="feature_2" class="position_relative"></div>
+                <!--<div id="feature_3" class="position_relative"></div>-->
+                <div class="social_box insta_box text-center" id="insta_box">
+                    <span class="hidden-sm hidden-xs">
+                        <div class="feature_insta_conatiner">
+                            <a href="https://www.instagram.com/westbrookmall" target="_blank">
+                                <h5 id="insta_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
+                            </a>        
+                        </div>
+                    </span>
+                    <span class="visible-sm-block visible-xs-block">
+                        <a href="https://www.instagram.com/westbrookmall" target="_blank">
+                            <h5 id="insta_mobile" class="insta">FOLLOW US<br>@WestbrookMall</h5>
+                        </a>     
+                    </span>
+                </div>
+            </div>
+            <div class="feature_item">
+                <div id="feature_3" class="position_relative"></div>
+                <div class="social_box text-center" id="social_fb">
+                    <span class="hidden-sm hidden-xs">
+                        <div class="feature_insta_conatiner">
+                        <a href="https://facebook.com/westbrookmall" target="_blank">
+                            <h5 id="twitter_mobile" class="insta">LIKE US ON <br>FACEBOOK</h5>
+                        </a>        
+                    </div>
+                    </span>
+                    <span class="visible-sm-block visible-xs-block">
+                        <a href="https://www.facebook.com/WestbrookMall" target="_blank">
+                            <h5 id="fb_mobile" class="insta">LIKE US ON FACEBOOK</h5>
+                        </a>        
+                    </span>
+                </div>
+                <div id="feature_4" class="position_relative"></div>
+            </div>
+            <div class="feature_item">
+                <div class="social">
+                    <a href="/hours" class="social_box text-center hours_box" id="hours_box">
+                        <span class="hidden-sm hidden-xs">
+                            <div id="home_hours_container2" class="home_feature_hours">
+                                <script id="home_hours_template2" type="x-tmpl-mustache/text">
+                                    <h5>Shopping Hours</h5>
+                                    <span class="hours_today">{{h}}</span>
+                                </script>
+                            </div>
+                            <p class="hours_link">See More Hours</p>
+                        </span>
+                        <span class="visible-sm-block visible-xs-block">
+                            <h5 id="hours_mobile" class="insta caps">Shopping Hours</h5>    
+                        </span>
+                    </a>
+                </div>
+                <div id="feature_5" class="position_relative"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .newsletter_container{
+        margin-top:0;
+    }
+</style>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banners = getBanners();
+            // renderBanner('#banner_template','#home_banner',banners);
+            var property = [getPropertyDetails()];
+            renderGeneral('#welcome_msg_container','#welcome_msg_template',property);
+            
+            // loadSocialFeeds(render_social)
+            renderFeatureItems();
+            var today_hours = getTodaysHours();
+            renderHomeHours('#home_hours_container2', '#home_hours_template2', today_hours);
+            
+            $('.flexslider').flexslider({
+                animation: "slide",
+                pauseOnHover: true
+            });
+            
+            show_content();
+            
+            if($.cookie("popup_viewed") != "true"){
+                $.cookie("popup_viewed", "true", { expires: 1 });
+                var popup = getPopups()[0];
+                if (popup != undefined){
+                    $('.popup_home a').attr('href', popup.photo_link)
+                    $('.popup_home img').attr('src', '//mallmaverick.cdn.speedyrails.net' + popup.photo_url)
+                    $('<div class="modal-backdrop custom_backdrop"></div>').appendTo(document.body);
+                    $('.popup_home').show()
+                    $('body').addClass('no_scroll');
+                }
+            }
+            $('.close_popup, .custom_backdrop').click(function(){
+                $(".modal-backdrop").remove();
+		        $(".popup_home").remove();
+		        $('body').removeClass('no_scroll');
+            });
+        }
+        loadMallDataCached(renderAll); 
+    });
+    
+    function render_social(){
+        var social_feed = getSocialFeed();
+        var latest_tweet = social_feed.twitter[0]
+        var latest_fb_post = social_feed.facebook[0]
+        if(latest_tweet){
+            if(latest_tweet.text){
+                if(latest_tweet.text.length > 100){
+                    $('#latest_tweet').text(latest_tweet.text.substr(0,100) + "...")
+                }
+                else{
+                    $('#latest_tweet').text(latest_tweet.text)
+                }
+            }
+            $('#latest_tweet_link').attr('href', latest_tweet.link)
+            var tweet_date = new Date(latest_tweet.created_at.split(',')[0])
+            $('#latest_tweet_date').text(moment(fb_date).format("MMM DD"))
+        }
+        
+        
+        //.text(get_month(tweet_date.getMonth()) + " " + tweet_date.getDate())
+        if(latest_fb_post){
+            if(latest_fb_post.text){
+                if(latest_fb_post.text.length > 100){
+                    $('#latest_fb').text(latest_fb_post.text.substr(0,100) + "...")
+                } else {
+                    $('#latest_fb').text(latest_fb_post.text)
+                }
+            }
+            $('#latest_fb_link').attr('href', latest_fb_post.link)
+            var fb_date = new Date(latest_fb_post.created_at.split(',')[0])
+            $('#latest_fb_date').text(moment(fb_date).format("MMM DD"))
+        }
+        
+        
+    }
+</script>
