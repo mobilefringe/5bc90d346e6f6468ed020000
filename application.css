@@ -1172,7 +1172,7 @@ h4 {
     display: inline-block;
     border: 0;
     background: $primary;
-    color: #FFF;
+    color: #4C4C4C;
     text-align: center;
     &:hover, &:focus{
         color: #fff;
