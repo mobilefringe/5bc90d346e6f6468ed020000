@@ -2008,6 +2008,9 @@ g.mapplic-active > * {
     word-break: break-word;
     a {
         color: #b85c0e;
+        &:hover {
+            color: #4C4C4C;
+        }
     }
 }
 @media(max-width: 980px) {
