@@ -1481,7 +1481,7 @@ h4 {
 }
 .promo_dates, .dates {
     margin-bottom: 20px;
-    color: $primary;
+    color: #b85c0e;
 }
 .promo_store {
     display: inline-block;
