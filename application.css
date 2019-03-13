@@ -1175,7 +1175,7 @@ h4 {
     color: #FFF;
     text-align: center;
     &:hover, &:focus{
-        color: #4C4C4C;
+        color: #000;
         text-decoration: none;
     }
 }
