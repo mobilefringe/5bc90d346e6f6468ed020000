@@ -2548,7 +2548,7 @@ g.mapplic-active > * {
     .category_header {
         margin-bottom: 10px;
         font-weight: 900;
-        font-size: 20px;
+        font-size: 24px;
         color: $primary;
         text-transform: uppercase;
         text-align: center;
@@ -2917,7 +2917,7 @@ g.mapplic-active > * {
         font-family: $font_family;
         font-weight: bolder;
         color: $primary;
-        font-size: 20px;
+        font-size: 24px;
         text-transform: uppercase;
     }
     .category_name {
