@@ -2549,7 +2549,7 @@ g.mapplic-active > * {
         margin-bottom: 10px;
         font-weight: bolder;
         font-size: 20px;
-        color: #b85c0c;
+        color: $primary;
         text-transform: uppercase;
         text-align: center;
     }
@@ -2916,7 +2916,7 @@ g.mapplic-active > * {
     .category_header{
         font-family: $font_family;
         font-weight: bolder;
-        color: #b85c0c;
+        color: $primary;
         font-size: 20px;
         text-transform: uppercase;
     }
