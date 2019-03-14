@@ -60,7 +60,7 @@
                         </script>
                     </div>
                 </div>
-                <p class="category_header">Categories</p>
+                <h5 class="category_header">Categories</h5>
                 <h5 class="category_name active_cat hidden_phone"><a href="#" class="show_all_stores">All</a></h5>
                 <div id="category_container" class="hidden_phone">
                     <script id="category_template" type="x-tmpl-mustache/text">
