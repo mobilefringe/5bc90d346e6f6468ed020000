@@ -1,0 +1,127 @@
+<div class="inside_banner text-center">
+    <h2 id="mm_page_title"></h2>
+    <p></p>
+</div>
+<div class="store_list_head main_container hidden_now" id="act_green">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours">Hours</a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-security">Security</a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-accessability">Accessibility</a></h5>
+        </div>
+         <div class="col-md-3">
+            <h5 class="active_heading">ACT Green</h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/hours">Hours</option>
+            <option value="/pages/westbrook-security">Security</option>
+            <option value="/pages/westbrook-accessability">Accessibility</option>
+        </select>
+    </h5>
+</div>
+<div class="store_list_head main_container hidden_now" id="security">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours">Hours</a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5  class="active_heading">Security</h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-accessability">Accessibility</a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives">ACT Green</a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/hours">Hours</option>
+            <option value="/pages/westbrook-accessability">Accessibility</option>
+            <option value="/pages/westbrook-act-green-initiatives">ACT Green</option>
+        </select>
+    </h5>
+</div>
+<div class="store_list_head main_container hidden_now" id="accessibility">
+    <div class="row hidden_phone">
+        <div class="col-md-3">
+            <h5><a href="/hours">Hours</a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-security">Security</a></h5>
+        </div>
+        <div class="col-md-3">
+            <h5 class="active_heading">Accessibility</h5>
+        </div>
+        <div class="col-md-3">
+            <h5><a href="/pages/westbrook-act-green-initiatives">ACT Green</a></h5>
+        </div>
+    </div>
+    <h5 class="text-center tap_here show_phone">
+        <label class="accessibility" for="option_selector">Select an Option</label>
+        <select id="option_selector" class="link_selector">
+            <option value="" disabled selected>Tap For More Options</option>
+            <option value="/hours">Hours</option>
+            <option value="/pages/westbrook-security">Security</option>
+            <option value="/pages/westbrook-act-green-initiatives">ACT Green</option>
+        </select>
+    </h5>
+</div>
+<div class="margin_20"></div>
+<div class="content_container main_container mobile_padding pages_text">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="mm_page_content"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll(){
+            var banner_repo = getRepoDetailsByName("Pages Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".inside_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), #000 url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var pathArray = window.location.pathname.split( '/' );
+            var slug = pathArray[pathArray.length-1];
+            prefix = get_prefix();
+            var pages_json = prefix + "/pages/" + slug + ".json"
+            $.getJSON(pages_json).done(function(data) {
+                $('#mm_page_title').html(data.title.toUpperCase());
+                $('#mm_page_content').html(data.body);
+            }).fail(function(jqXHR) {
+                if (jqXHR.status == 404) {
+                    $("#404_msg").fadeIn("fast");
+                }
+            }); 
+            
+            // check if top header should be shown 
+            if (slug == 'westbrook-act-green-initiatives') {
+                $("#act_green").show();
+            } else if (slug == 'westbrook-security') {
+                $("#security").show();
+            } else if (slug == 'westbrook-accessability') {
+                $("#accessibility").show();
+            }
+            
+            show_content();
+        }
+        loadMallDataCached(renderAll); 
+    })
+</script>
