@@ -1,0 +1,74 @@
+<div class="main_banner text-center">
+    <h2>Promotions</h2>
+    <p></p>
+</div>
+<div class="margin_20"></div>
+ <div class="content_container main_container">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="promos_container">
+                    <script id="promos_template" type="x-tmpl-mustache/text">
+                        <div class="row promo_item">
+                            <div class="col-md-3">
+                                <div class="cropped_image">
+                                    <img src="{{promo_image_url_abs}}" alt="{{name}}" />
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="promo_list_name">{{name}}</h2>
+                                <p>
+                                    <a href="{{store_slug}}" class="underline promo_store" style="{{store_show}}">{{store_name}}</a>
+                                    <span class="promo_store" style="{{mall_show}}">{{store_name}}</span>
+                                    <span class="hidden_phone"> | </span><span class="promo_dates">{{dates}}</span>
+                                </p>
+                                <div class="promo_list_desc">{{description_short}}</div>
+                                <a class="newsletter_btn animated_btn inside_btn" href="/promotions/{{slug}}">
+                                    View Deals Details <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden_now" id="no_promos">
+            <div class="col-md-12">
+                <p>There are no Promotions scheduled at this time. Please check back soon!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll (){
+            var banner_repo = getRepoDetailsByName("Promotions Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), #000 url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var promotions = getPromotionsList().sortBy(function(o){ return o.end_date });
+            var published_promos = [];
+            $.each( promotions , function( key, val ){
+                today = moment();
+                webDate = moment(val.show_on_web_date);
+                if (today >= webDate) {
+                    published_promos.push(val)
+                } 
+            });
+            if (published_promos.length > 0) {
+                renderPromotions("#promos_container","#promos_template", published_promos, "Westbrook Mall");
+            } else {
+                $('#no_promos').show()
+            }
+            
+            show_content();
+        }
+		loadMallDataCached(renderAll); 
+    })
+</script>
