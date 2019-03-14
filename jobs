@@ -1,0 +1,74 @@
+<div class="main_banner text-center">
+    <h2>Careers</h2>
+    <p></p>
+</div>
+
+<div class="margin_20"></div>
+<div class="content_container main_container">
+    <div class="margin_25_across">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="jobs_container">
+                    <script id="jobs_template" type="x-tmpl-mustache/text">
+                        <div class="row promo_item">
+                            <div class="col-md-3">
+                                <div class="cropped_image">
+                                    <img src="{{img_url}}" alt="{{store_name}} Logo" />
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="promo_list_name">{{name}}</h2>
+                                <p>
+                                    <a href="/stores/{{store_slug}}" style="{{store_show}}"><span class="underline promo_store">{{store_name}}</span></a>
+                                    <span class="promo_store" style="{{mall_show}}">{{store_name}}</span><span class="hidden_phone"> | </span>
+                                    <span class="promo_store">{{job_type}}</span><span class="hidden_phone"> | </span>
+                                    <span class="promo_dates">End Date: {{end_date}}</span>
+                                </p>
+                                <div class="promo_list_desc">{{description_short}}</div>
+                                <a class="newsletter_btn animated_btn inside_btn" href="/jobs/{{slug}}">
+                                    View Posting Details <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden_now" id="no_jobs">
+            <div class="col-md-12">
+                <p>There are no Job postings at this time. Please check back soon!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        function renderAll (){
+            var banner_repo = getRepoDetailsByName("Careers Banner");
+            if (banner_repo) {
+                var banner_image = banner_repo.images[0].image_url;
+                if (banner_image) {
+                    $(".main_banner").css({ "background": "linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), #000 url(" + banner_image + ") center center" });
+                }
+            }
+            
+            var jobs = getJobsList().sortBy(function(o){ return o.name});
+            var published_jobs = [];
+            $.each( jobs , function( key, val ){
+                today = moment();
+                webDate = moment(val.show_on_web_date);
+                if (today >= webDate) {
+                    published_jobs.push(val)
+                } 
+            });
+            if (published_jobs.length > 0) {
+                renderJobs('#jobs_container', '#jobs_template', jobs, "Westbrook Mall");
+            } else {
+                $('#no_jobs').show()
+            }
+            show_content();
+        }
+		loadMallDataCached(renderAll); 
+    })
+</script>
