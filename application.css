@@ -2915,7 +2915,7 @@ g.mapplic-active > * {
     
     .category_header{
         font-family: $font_family;
-        font-weight: 900;
+        font-weight: bolder;
         color: $primary;
         font-size: 20px;
         text-transform: uppercase;
