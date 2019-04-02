@@ -46,7 +46,7 @@
         <ul class="slides" id="home_banner">
             <li class="position_relative">
                 <a href="/stores" {{css}}>
-                    <div class="hero_banner" style="background-image: url('//codecloud.cdn.speedyrails.net/sites/5c522e2f6e6f644e92010000/image/jpeg/1541614076000/Winter-Web NEW 1920 x 540.jpg')"></div>
+                    <div class="hero_banner" style="background-image: url('//codecloud.cdn.speedyrails.net/sites/5c522e2f6e6f644e92010000/image/png/1554224342000/11937_WBM_Spring_2019_homepage_banner.png')"></div>
                 </a>
             </li>
           
