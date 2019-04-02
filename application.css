@@ -143,6 +143,10 @@ body {
         margin-bottom: 0;
     }
 }
+bc_banner {
+    margin: 20px auto;
+    max-width: 95%;
+}
 .language_toggle {
     position: absolute;
     right: 80px;
