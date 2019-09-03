@@ -44,7 +44,7 @@
     <script src="//codecloud.cdn.speedyrails.net/sites/587659fb6e6f641648010000/text/javascript/1485895011000/moment-with-locales.min.js"></script>
     <script src="//codecloud.cdn.speedyrails.net/sites/579231876e6f6467cf000000/application/x-javascript/1468507661000/moment-timezone-with-data.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
-    <script src="//codecloud.cdn.speedyrails.net/sites/5438407c6e6f64462d020000/601617fe9ab691b1b62a66ac3ca3e8b7/jquery.cookie.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/5c522e2f6e6f644e92010000/text/javascript/1567541283554/jquery.cookie.min.js"></script>
     <script src="//codecloud.cdn.speedyrails.net/sites/58fe54076e6f6458dc010000/application/x-javascript/1493132969000/js.cookie.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script src="/application.js" type="text/javascript"></script>
