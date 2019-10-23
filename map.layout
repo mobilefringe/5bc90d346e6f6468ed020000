@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="{{meta_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:image" content="{{meta_image}}">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,initial-scale=1">
+    <meta name="description" content="{{meta_description}}">
+    <meta name="keywords" content="{{meta_keywords}}">
+    <meta name="author" content="">
+    
+    <title>{{meta_title}}</title>
+   <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-40014802-41', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- FAVICON -->
+    <link rel="icon" href="//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/png/1541719124000/favicon-32x32.png">
+
+    <!--CSS-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//codecloud.cdn.speedyrails.net/sites/5ae8c1fe6e6f6473fd160000/text/css/1522163605908/mapplic.css" rel="stylesheet">
+    <link href="//codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/css/1485967426000/map.css" rel="stylesheet">
+    <link href="/scaffold.css" rel="stylesheet">
+    <link href="/application.css" rel="stylesheet">
+    
+    <!--Javascript-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/587659fb6e6f641648010000/text/javascript/1485895011000/moment-with-locales.min.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/579231876e6f6467cf000000/application/x-javascript/1468507661000/moment-timezone-with-data.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/text/javascript/1567541283554/jquery.cookie.min.js"></script>
+    <script src="//codecloud.cdn.speedyrails.net/sites/58fe54076e6f6458dc010000/application/x-javascript/1493132969000/js.cookie.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="/application.js" type="text/javascript"></script>
+    <script src="/helpers.js" type="text/javascript"></script>
+    
+    <!--MallMaverick SDK-->
+    <script src="//mallmaverick.codecloudapp.com/mallmaverick_v4.js"></script>
+    <script src="//mallmaverick.codecloudapp.com/mustache_mallmaverick.js?v=0.3"></script>
+    
+    <script>
+        setEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/all.json');
+        setSocialEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/social.json');
+    </script>
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-40014802-41', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
+        /**
+        * Function that tracks a click on an outbound link in Analytics.
+        * This function takes a valid URL string as an argument, and uses that URL string
+        * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+        * using 'navigator.sendBeacon' in browser that support it.
+        */
+        var trackOutboundLink = function(url) {
+            ga('send', 'event', 'outbound', 'click', url, {
+                'transport': 'beacon'
+            });
+        }
+    </script>
+</head>
+
+<body class="">
+    <div class="mobile_menu_container">
+        <div class="opened_mobile_menu">
+            <h3>
+                Menu
+                <span id="close_menu" class="pull-right"><img class="menu_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166976000/close_menu.png"  alt="Close Menu"></span>        
+            </h3>
+            <ul>
+                <li>
+                    <a href="#" class="submenu_expander open">
+                        Stores
+                        <img class="menu_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166990000/open_submenu.png" alt="" style="display: none;">
+						<img class="menu_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461179572000/close_submenu.png" alt="" style="display: inline;">
+                    </a>
+                    <ul class="sub_menu">
+						<li><a href="/stores">Directory</a></li>
+						<li><a href="/map">Shopping Map</a></li>
+					</ul>
+                </li>
+                <li>
+                    <a href="/promotions">Promotions</a>
+                </li>
+                <li>
+                    <a href="/events">Events</a>
+                </li>
+                 <li>
+                    <a href="#"  class="submenu_expander">
+                        Our Services
+                        <img class="menu_icon plus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166990000/open_submenu.png" alt="" style="display: inline;">
+						<img class="menu_icon minus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461179572000/close_submenu.png" alt="" style="display: none;">
+                    </a>
+                    <ul class="sub_menu hidden_now">
+                        <li><a href="/hours">Shopping Hours</a></li>
+                        <li><a href="pages/westbrook-security">Security</a></li>
+                        <li><a href="/pages/westbrook-accessability">Accessibility</a></li>
+                        <li><a href="/pages/westbrook-act-green-initiatives">ACT Green Initiatives</a></li>
+					</ul>
+                </li>
+                <li>
+                    <a href="/jobs">Careers</a>
+                </li>
+                <li>
+                    <a href="#"  class="submenu_expander">
+                        About Us
+                        <img class="menu_icon plus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461166990000/open_submenu.png" alt="" style="display: inline;">
+						<img class="menu_icon minus_icon" src="//codecloud.cdn.speedyrails.net/sites/59946a1b6e6f641ba4ce0000/image/png/1461179572000/close_submenu.png" alt="" style="display: none;">
+                    </a>
+                    <ul class="sub_menu hidden_now">
+                       
+                        <li><a href="/contact-us">Contact Us</a></li>
+                        <li><a href="/leasing">Leasing</a></li>
+					</ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="fixed_header">
+        <div class="news-ticker" data-speed="5000">
+            <ul class="bulletin" id="bulletin"></ul>
+        </div>
+        <section class="content_container main_container position_relative">
+            <div class="row header mobile_margin">
+                <div class="col-md-4 col-xs-12">
+                    <div class="google_translate_container">
+                        <div id="google_translate_element_m"></div>
+                    </div>
+                    <div class="language_toggle_mobile hide">
+      					<a href="?locale=en" id="set_lang_en_m">EN</a> |
+      					<a href="?locale=fr" id="set_lang_fr_m">FR</a>
+					</div>
+                    <p class="hours_home hidden_phone"><span class="hours_dot"></span> 
+                        <span>Today's Hours</span>
+                        <span id="home_hours_container">
+                            <script id="home_hours_template" type="x-tmpl-mustache/text">
+                                <span class="hours_today" id="hours_home">{%raw%}{{h}}{%endraw%}</span>
+                            </script>
+                        </span>
+                    </p>
+                    <a href="/hours" class="holiday_hours_home soft_hidden_phone">View Holiday Hours</a>
+                </div>
+                <div class="col-md-4 col-xs-2 show_phone"></div>
+                <div class="col-md-4 col-xs-8 text-center">
+                    <a href="/">
+                        <img src="//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/png/1540229632590/westbrook_logo.png" class="main_logo " alt="Lambton Mall Logo">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-2 text-right position_relative">
+                    <div class="language_toggle hide">
+      					<a href="?locale=en" id="set_lang_en">EN</a> |
+      					<a href="?locale=fr" id="set_lang_fr">FR</a>
+					</div>
+					<div id="desktopHeader">
+                        <div id="g_translater" class="text-center">
+                            <div id="google_translate_element"></div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                         var m = false;
+                        function googleTranslateElementInit() {
+                          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,zh-CN,zh-TW,es,tl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-40014802-41'}, 'google_translate_element');
+                        setTimeout(function(){
+                                if ($( window ).width() < 768){
+                                    m = true;
+                                    $('#g_translater').detach().appendTo('#google_translate_element_m');                            
+                                }
+                            }, 1500);
+                        }
+                        $( window ).resize(function() {
+                            if ($( window ).width() < 768 && m == false){
+                                m = true;
+                                $('#g_translater').detach().appendTo('#google_translate_element_m');                            
+                            } else if (jQuery( window ).width() >= 768 && m == true){
+                                m = false;
+                                $('#g_translater').detach().prependTo('#desktopHeader');                            
+                            }
+                        });
+                        /*!
+                         * Capture Analytics for Google Translate
+                         * As of 2016, the Google Translate toolbar still only works with the old-style analytics (ga.js)
+                         * The code below mocks the old analytics object, captures the events and passes them to the new Universal Analytics (analytics.js)
+                         *
+                         * Source: http://webmasters.stackexchange.com/a/101787/18749
+                         * Copyright (c) Simon East 2016, for yump.com.au
+                         * Free to use under MIT licence <https://opensource.org/licenses/MIT>
+                         */
+                        window._gaq = {}; window._gat = {};
+                        window._gat._getTracker = window._gat._getTrackerByName = function(){ return {
+                          _trackEvent: function(eventCategory, eventAction, eventLabel) {
+                            // [0] will send the event to the first analytics ID on the page (in case you have multiple)
+                            if (window.ga && ga.getAll()[0]) {
+                              ga.getAll()[0].send('event', eventCategory, eventAction, eventLabel);
+                              window.console && console.log('Translation event sent to Google Analytics:', eventCategory, eventAction, eventLabel);
+                            } else {
+                              window.console && console.warn('Could not locate Google Analytics when attempting to log translation events.')
+                            }
+                          }
+                        }}
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    <img src="//codecloud.cdn.speedyrails.net/sites/57f7f01f6e6f647835890000/image/png/1460488452000/icon_menu.png" class="open_menu" alt="Open Menu">
+                </div>
+                <div class="col-xs-12 show_phone home_hours_phone">
+                    <p class="hours_home">
+                        <span class="hours_dot"></span>
+                        <span>Today's Hours</span>
+                        <span id="home_hours_container3">
+                            <script id="home_hours_template3" type="x-tmpl-mustache/text">
+                                <span class="hours_today">{%raw%}{{h}}{%endraw%}</span>
+                            </script>
+                        </span>
+                    </p>
+                    <a class="holiday_hours_home" href="/hours">View Holiday Hours</a>
+                </div>
+            </div>
+            <div class="hedaer_divider"></div>
+        </section>
+    </div>
+    <h1 class="accessibility">Westbrook Mall</h1>
+    <section class="yield">
+        {{yield}}
+    </section>
+
+    <section class="content_container main_container">
+        <div class="newsletter_container text-center">
+            <h3 class="heading">Subscribe to Receive Our Updates</h3>
+            <a href="/newsletter" class="newsletter_btn animated_btn">Sign Up</a>
+        </div>
+        <!--<div class="trim_screen">-->
+        <!--    <a id="track_link" href="http://bit.ly/cyclone-idai-cushman-wakefield" target="_blank">-->
+        <!--        <img class="center-block bc_banner" src="//codecloud.cdn.speedyrails.net/sites/5af2ef146e6f6450e9160100/image/png/1554151834429/Idaix2_800x100_en.png" alt=“Humanitarian Campaign”/>-->
+        <!--    </a>-->
+        <!--</div>-->
+        <div class="site_map">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="">
+                        <h3 class="site_map_heading">Social Media</h3>
+                        <p class="site_map_desc">Follow us on social media for news and activities.</p>
+                        <div class="social_icons">
+                            <a href="https://www.facebook.com/WestbrookMall/" target="_blank">
+                                <span><i class="fa fa-facebook"></i></span>
+                                <p style="display: none;">Facebook</p>
+                            </a>
+                            <a href="https://twitter.com/WestbrookMall" target="_blank">
+                                <span><i class="fa fa-twitter"></i></span>
+                                <p style="display: none;">Twitter</p>
+                            </a>
+                            <a href="https://www.instagram.com/westbrookmall/" target="_blank">
+                                <span><i class="fa fa-instagram"></i></span>
+                                <p style="display: none;">Instagram</p>
+                            </a>
+                            <div class="clearfix"></div>
+                            <br class="hidden_phone" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 left_right_border">
+                    <h3 class="site_map_heading">Site Map</h3>
+                    <div class="row footer_site_map">
+                        <div class="col-md-6 col-xs-6">
+                            <ul>
+                                <li><a href="/stores">Directory</a></li>
+                                <li><a href="/map">Shopping Map</a></li>
+                                <li><a href="/events">Events</a></li>
+                                <li><a href="/promotions">Promotions</a></li>
+                                <li><a href="/jobs">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <ul>
+                                <li><a href="/hours">Shopping Hours</a></li>
+                                <li><a href="/pages/westbrook-accessability">Accessibility</a></li>
+                                <li><a href="/contact-us">Contact Us</a></li>
+                                <li><a href="/leasing">Leasing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="site_map_heading">&copy; <span id="current_year"></span> - Westbrook Mall</h3>
+                    <p class="rights_reserved">
+                        <a href="https://www.google.com/maps/place/Westbrook+Mall/@51.0422635,-114.1422347,17z/data=!3m1!4b1!4m5!3m4!1s0x53716e309b084c4f:0x4bf73618e4160580!8m2!3d51.0422635!4d-114.140046" target="_blank">
+                           1200 37 St SW <br> 
+                            Calgary, AB T3C 1S2
+                        </a>
+                        <br/>
+                        <a href="http://www.cushmanwakefield.ca/en/" target="_blank">
+                            <img src="//codecloud.cdn.speedyrails.net/sites/59c3f9f46e6f646526050000/image/png/1509381758000/CW Logos-_CW_Colorlogo.png" class="management_logo" alt="Cushman & Wakefield Logo">
+                        </a>
+                    </p>
+                    <p class="rights_reserved">Powered by: <a href="//mallmaverick.com" target="_blank">Mall Maverick</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $("#track_link").click( function() {
+            trackOutboundLink('http://bit.ly/cyclone-idai-cushman-wakefield');
+        });
+    </script>
+</body>
+
+</html>
