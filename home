@@ -31,7 +31,7 @@
     </div>
     <i class="fa fa-remove close_popup"></i>
 </div>
-<div class="home_banner">
+<div id="home_banner">
     <script id="banner_template" type="x-tmpl-mustache/text">
         {{#url}}<a href="{{url}}" {{css}} onclick="{{noLink}}">{{/url}}
             <div class="hero_banner" style="background-image: url({{image_url}})">
