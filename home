@@ -32,6 +32,15 @@
     <i class="fa fa-remove close_popup"></i>
 </div>
 <div class="home_banner">
+    <script id="banner_template" type="x-tmpl-mustache/text">
+        {{#url}}<a href="{{url}}" {{css}} onclick="{{noLink}}">{{/url}}
+            <div class="hero_banner" style="background-image: url({{image_url}})">
+                <h3>SHOPPING IS OUR MIDDLE NAME</h3>
+                <p>The fashion capital of Atlantic Canada</p>
+                
+            </div>
+        </a>
+    </script>
     <!--<div class="flexslider text-center">-->
         <!-- UNCOMMENT FOR DYMANIC CONTENT -->
         <!--<ul class="slides" id="home_banner">-->
@@ -155,8 +164,13 @@
     $(document).ready(function(e){
         init(e);
         function renderAll(){
-            var banners = getBanners();
+            // var banners = getBanners();
+            // var first_banner = banners[0];
             // renderBanner('#banner_template','#home_banner',banners);
+            
+            
+            var banners = getBanners();
+            renderBanner('#banner_template','#home_banner',banners);
             var property = [getPropertyDetails()];
             renderGeneral('#welcome_msg_container','#welcome_msg_template',property);
             
