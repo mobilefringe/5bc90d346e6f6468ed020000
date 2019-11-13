@@ -32,7 +32,7 @@
     <i class="fa fa-remove close_popup"></i>
 </div>
 <div class="home_banner">
-    <div class="flexslider text-center">
+    <!--<div class="flexslider text-center">-->
         <!-- UNCOMMENT FOR DYMANIC CONTENT -->
         <!--<ul class="slides" id="home_banner">-->
         <!--    <script id="banner_template" type="x-tmpl-mustache/text">-->
@@ -43,6 +43,7 @@
         <!--        </li>-->
         <!--    </script>-->
         <!--</ul>-->
+        
         <!--Static-->
         <!--<ul class="slides" id="home_banner">-->
         <!--    <li class="position_relative">-->
@@ -52,7 +53,7 @@
         <!--    </li>-->
           
         <!--</ul>-->
-    </div>
+    <!--</div>-->
     <div class="banner_text" id="welcome_msg_container">
         <script id="welcome_msg_template" type="x-tmpl-mustache/text">
             {{#welcome_message}}<h3>
