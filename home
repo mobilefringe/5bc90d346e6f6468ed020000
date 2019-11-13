@@ -35,9 +35,6 @@
     <script id="banner_template" type="x-tmpl-mustache/text">
         {{#url}}<a href="{{url}}" {{css}} onclick="{{noLink}}">{{/url}}
             <div class="hero_banner" style="background-image: url({{image_url}})">
-                <h3>SHOPPING IS OUR MIDDLE NAME</h3>
-                <p>The fashion capital of Atlantic Canada</p>
-                
             </div>
         </a>
     </script>
