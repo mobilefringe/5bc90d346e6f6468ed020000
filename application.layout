@@ -55,7 +55,7 @@
     <script src="//mallmaverick.codecloudapp.com/mustache_mallmaverick.js?v=0.3"></script>
     
     <script>
-        setEndPoint('//westbrook.mallmaverickstaging.com/api/v4/westbrook/all.json');
+        setEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/all.json');
         setSocialEndPoint('//westbrook.mallmaverick.com/api/v4/westbrook/social.json');
     </script>
     
