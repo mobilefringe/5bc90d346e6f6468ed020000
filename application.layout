@@ -319,10 +319,10 @@
         </div>
     </section>
     <script>
-        $("#track_link").click( function() {
-            trackOutboundLink('http://bit.ly/cyclone-idai-cushman-wakefield');
-        });
-    </script>
+    $("#track_link").click( function() {
+        trackOutboundLink('https://www.wires.org.au/');
+    });
+</script>
 </body>
 
 </html>
