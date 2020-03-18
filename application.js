@@ -147,23 +147,36 @@ function renderEventDetails(container, template, collection, mall_name){
     $(container).html(item_rendered.join(''));
 }
 
+function getFeatureList(){
+    initData();
+    var mallDataJSON = JSON.parse(getStorage().mallData);
+    return mallDataJSON.feature_items;
+}
+
 function renderFeatureItems(){
-    // var items = getFeatureList();
-    var items = [];
-    var images= ["//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/png/1584468770000/470x940 Covid-19 Update.png","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614081000/My-Donair-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614078000/Sport-Chek-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541708493000/2Act-Green.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614077000/Kid's-Fun-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614077000/470 x 940.jpg","https://picsum.photos/470/940?image=1077"]
-    var urls = ["/pages/westbrook-covid-19-updates", "/contact-us", "/stores", "/pages/westbrook-act-green-initiatives", "/pages/westbrook-kids-fun", "/promotions", "feature7_url"];
-    var names = ["", "Contact Us", "Shops", "ACT GREEN", "Kids Fun", "Promotions", "feature 7"];
-    $.each(images, function(i, val){
-        var item = {};
-        item.name = names[i];
-        item.url = urls[i]
-        item.image_url = val;
-        items.push(item);
-    });
+    var items = getFeatureList();
     $.each(items, function(i, val){
         $('#feature_' + i).html('<a href="'+ val.url +'"><img src="'+ val.image_url+'" class="hoverer" alt="' +val.name+ '"><h5 class="center_h">'+ val.name +'</h5></a>')
-    });
+    })
 }
+
+// function renderFeatureItems(){
+//     // var items = getFeatureList();
+//     var items = [];
+//     var images= ["//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/png/1584468770000/470x940 Covid-19 Update.png","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614081000/My-Donair-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614078000/Sport-Chek-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541708493000/2Act-Green.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614077000/Kid's-Fun-470-x-470.jpg","//codecloud.cdn.speedyrails.net/sites/5db06f5e6e6f64666e020000/image/jpeg/1541614077000/470 x 940.jpg","https://picsum.photos/470/940?image=1077"]
+//     var urls = ["/pages/westbrook-covid-19-updates", "/contact-us", "/stores", "/pages/westbrook-act-green-initiatives", "/pages/westbrook-kids-fun", "/promotions", "feature7_url"];
+//     var names = ["", "Contact Us", "Shops", "ACT GREEN", "Kids Fun", "Promotions", "feature 7"];
+//     $.each(images, function(i, val){
+//         var item = {};
+//         item.name = names[i];
+//         item.url = urls[i]
+//         item.image_url = val;
+//         items.push(item);
+//     });
+//     $.each(items, function(i, val){
+//         $('#feature_' + i).html('<a href="'+ val.url +'"><img src="'+ val.image_url+'" class="hoverer" alt="' +val.name+ '"><h5 class="center_h">'+ val.name +'</h5></a>')
+//     });
+// }
 
 function renderGeneral(container, template, collection){
     var item_list = [];
