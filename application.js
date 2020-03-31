@@ -25,7 +25,7 @@ function renderBanner(banner_template,home_banner,banners){
         //         item_list.push(val);
         //     }
         // }
-    });
+    // });
 
     $.each( item_list , function( key, val ) {
         var repo_rendered = Mustache.render(banner_template_html,val);
